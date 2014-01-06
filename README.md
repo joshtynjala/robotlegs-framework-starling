@@ -14,6 +14,10 @@ This is a complete port of [Robotlegs](http://www.robotlegs.org/) version 1.x ta
 * [Compiled SWC](http://feathersui.com/download/other/robotlegs-framework-starling-v0.9.0.swc)
 * [API Reference](http://feathersui.com/documentation/robotlegs-starling)
 
+## Requirements
+
+Built with Starling Framework 1.4.1. Feathers 1.2.0 or newer is required to work with Feathers components.
+
 ## Credits
 
 Based on the hard work of the original Robotlegs contributors. Ported to Starling by [Josh Tynjala](http://twitter.com/joshtynjala), creator of the [Feathers](http://feathersui.com/) open source user interface components for Starling.

@@ -21,17 +21,17 @@ package org.robotlegs.adapters
 	{
 		protected static const XML_CONFIG:XML =
 			<types>
-				<type name='org.robotlegs.mvcs::Actor'>
+				<type name='org.robotlegs.starling.mvcs::Actor'>
 					<field name='eventDispatcher'/>
 				</type>
-				<type name='org.robotlegs.mvcs::Command'>
+				<type name='org.robotlegs.starling.mvcs::Command'>
 					<field name='contextView'/>
 					<field name='mediatorMap'/>
 					<field name='eventDispatcher'/>
 					<field name='injector'/>
 					<field name='commandMap'/>
 				</type>
-				<type name='org.robotlegs.mvcs::Mediator'>
+				<type name='org.robotlegs.starling.mvcs::Mediator'>
 					<field name='contextView'/>
 					<field name='mediatorMap'/>
 					<field name='eventDispatcher'/>

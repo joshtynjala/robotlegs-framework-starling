@@ -21,3 +21,7 @@ Built with Starling Framework 1.5.1. Feathers 1.3.0 or newer is required to work
 ## Credits
 
 Based on the hard work of the original Robotlegs contributors. Ported to Starling by [Josh Tynjala](http://twitter.com/joshtynjala), creator of the [Feathers](http://feathersui.com/) open source user interface components for Starling.
+
+## Examples
+
+* [feathers-weather](https://github.com/joshtynjala/feathers-weather) is a mobile app built with Starling, Feathers, and Robotlegs that uses weather and location APIs from Yahoo.

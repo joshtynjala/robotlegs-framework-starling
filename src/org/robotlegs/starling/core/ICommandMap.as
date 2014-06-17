@@ -39,7 +39,7 @@ package org.robotlegs.starling.core
 		 * 
 		 * @throws org.robotlegs.starling.base::ContextError
 		 */		
-		function execute(commandClass:Class, payload:Object = null, payloadClass:Class = null, named:String = null):void;
+		function execute(commandClass:Class, payload:Object = null, payloadClass:Class = null, named:String = ""):void;
 		
 		/**
 		 * Map a Class to an Event type

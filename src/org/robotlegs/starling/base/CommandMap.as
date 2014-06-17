@@ -168,7 +168,7 @@ package org.robotlegs.starling.base
 		/**
 		 * @inheritDoc
 		 */
-		public function execute(commandClass:Class, payload:Object = null, payloadClass:Class = null, named:String = null):void
+		public function execute(commandClass:Class, payload:Object = null, payloadClass:Class = null, named:String = ""):void
 		{
 			verifyCommandClass(commandClass);
 			

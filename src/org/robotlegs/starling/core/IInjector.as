@@ -27,7 +27,7 @@ package org.robotlegs.starling.core
 		 * 
 		 * @return * A reference to the rule for this injection. To be used with <code>mapRule</code>
 		 */
-		function mapValue(whenAskedFor:Class, useValue:Object, named:String = null):*;
+		function mapValue(whenAskedFor:Class, useValue:Object, named:String = ""):*;
 		
 		/**
 		 * When asked for an instance of the class <code>whenAskedFor</code>
@@ -41,7 +41,7 @@ package org.robotlegs.starling.core
 		 * 
 		 * @return * A reference to the rule for this injection. To be used with <code>mapRule</code>
 		 */
-		function mapClass(whenAskedFor:Class, instantiateClass:Class, named:String = null):*;
+		function mapClass(whenAskedFor:Class, instantiateClass:Class, named:String = ""):*;
 		
 		/**
 		 * When asked for an instance of the class <code>whenAskedFor</code>
@@ -55,7 +55,7 @@ package org.robotlegs.starling.core
 		 * 
 		 * @return * A reference to the rule for this injection. To be used with <code>mapRule</code>
 		 */
-		function mapSingleton(whenAskedFor:Class, named:String = null):*;
+		function mapSingleton(whenAskedFor:Class, named:String = ""):*;
 		
 		
 		/**
@@ -71,7 +71,7 @@ package org.robotlegs.starling.core
 		 * 
 		 * @return * A reference to the rule for this injection. To be used with <code>mapRule</code>
 		 */
-		function mapSingletonOf(whenAskedFor:Class, useSingletonOf:Class, named:String = null):*;
+		function mapSingletonOf(whenAskedFor:Class, useSingletonOf:Class, named:String = ""):*;
 		
 		/**
 		 * When asked for an instance of the class <code>whenAskedFor</code>
@@ -86,7 +86,7 @@ package org.robotlegs.starling.core
 		 * 
 		 * @return * A reference to the rule for this injection. To be used with <code>mapRule</code>
 		 */
-		function mapRule(whenAskedFor:Class, useRule:*, named:String = null):*;
+		function mapRule(whenAskedFor:Class, useRule:*, named:String = ""):*;
 		
 		/**
 		 * Perform an injection into an object, satisfying all it's dependencies
@@ -123,7 +123,7 @@ package org.robotlegs.starling.core
 		 * @param named An optional name (id)
 		 * @return * An instance
 		 */		
-		function getInstance(clazz:Class, named:String = null):*;
+		function getInstance(clazz:Class, named:String = ""):*;
 		
 		/**
 		 * Create an injector that inherits rules from its parent
@@ -138,7 +138,7 @@ package org.robotlegs.starling.core
 		 * @param clazz A class or interface
 		 * @param named An optional name (id)
 		 */
-		function unmap(clazz:Class, named:String = null):void;
+		function unmap(clazz:Class, named:String = ""):void;
 		
 		/**
 		 * Does a rule exist to satsify such a request?
@@ -147,7 +147,7 @@ package org.robotlegs.starling.core
 		 * @param named An optional name (id)
 		 * @return Whether such a mapping exists
 		 */		
-		function hasMapping(clazz:Class, named:String = null):Boolean;
+		function hasMapping(clazz:Class, named:String = ""):Boolean;
 		
 		/**
 		 * @return The Application Domain

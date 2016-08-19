@@ -12,7 +12,7 @@ This is a complete port of [Robotlegs](http://www.robotlegs.org/) version 1.x ta
 ## Links
 
 * [Compiled SWC](http://feathersui.com/download/other/robotlegs-framework-starling-v0.9.1.swc)
-* [API Reference](http://feathersui.com/documentation/robotlegs-starling)
+* [API Reference](http://joshtynjala.github.io/robotlegs-framework-starling/api-reference/)
 
 ## Requirements
 

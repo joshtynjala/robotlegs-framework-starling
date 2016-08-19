@@ -1,0 +1,31 @@
+
+<overviews>
+    
+	
+<all-classes>
+		
+<description>Documentation for classes includes syntax, usage information, and code samples for methods, properties, and event handlers and listeners for those APIs that belong to a specific class in ActionScript. The classes are listed alphabetically. If you are not sure to which class a certain method or property belongs, you can look it up in the Index.</description>
+	</all-classes>
+	
+<deprecated>
+		
+<shortDescription>A list of deprecated items and suggested alternatives when available.</shortDescription>
+		
+<description></description>
+	</deprecated>
+	
+
+<packages>
+<package name="org.robotlegs.adapters">
+<shortDescription>Adapters to bridge third-party Di/IoC and reflection libraries</shortDescription><longDescription>Adapters to bridge third-party Di/IoC and reflection libraries</longDescription>
+</package>
+<package name="org.robotlegs.starling.base">
+<shortDescription>Base classes used to build custom Robotlegs frameworks</shortDescription><longDescription>Base classes used to build custom Robotlegs frameworks</longDescription>
+</package>
+<package name="org.robotlegs.starling.core">
+<shortDescription>The core Robotlegs Framework apparatus contracts</shortDescription><longDescription>The core Robotlegs Framework apparatus contracts</longDescription>
+</package>
+<package name="org.robotlegs.starling.mvcs">
+<shortDescription>The reference MVCS Robotlegs Framework implementation</shortDescription><longDescription>The reference MVCS Robotlegs Framework implementation</longDescription>
+</package>
+</packages></overviews>

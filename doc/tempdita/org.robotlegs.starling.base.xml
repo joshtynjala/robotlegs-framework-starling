@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?><apiPackage id="org.robotlegs.starling.base"><apiName>org.robotlegs.starling.base</apiName><apiDetail/><apiClassifier id="org.robotlegs.starling.base:ContextBase"><apiName>ContextBase</apiName><shortdesc>
+	 An abstract IContext implementation
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>org.robotlegs.starling.core:IContext</apiBaseInterface><apiBaseClassifier>starling.events:EventDispatcher</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 An abstract <codeph>IContext</codeph> implementation
+	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.starling.base:ContextBase:ContextBase"><apiName>ContextBase</apiName><shortdesc>
+		 Abstract Context Implementation
+		 
+		 Extend this class to create a Framework or Application context
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/></apiConstructorDef><apiDesc>
+		 Abstract Context Implementation
+		 
+		 <p>Extend this class to create a Framework or Application context</p>
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiValue id="org.robotlegs.starling.base:ContextBase:eventDispatcher:get"><apiName>eventDispatcher</apiName><shortdesc>
+		 
+		 The IContext's EventDispatcher
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="read"/><apiType value="starling.events:EventDispatcher"/></apiValueDef><apiDesc>
+		 
+		 The <codeph>IContext</codeph>'s <codeph>EventDispatcher</codeph>
+		 </apiDesc></apiValueDetail></apiValue></apiClassifier><apiClassifier id="org.robotlegs.starling.base:ContextEventType"><apiName>ContextEventType</apiName><shortdesc>
+	 Framework event types
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseClassifier>Object</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 Framework event types
+	 </apiDesc></apiClassifierDetail><apiValue id="org.robotlegs.starling.base:ContextEventType:SHUTDOWN_COMPLETE"><apiName>SHUTDOWN_COMPLETE</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>shutdownComplete</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextEventType:SHUTDOWN"><apiName>SHUTDOWN</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>shutdown</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextEventType:STARTUP_COMPLETE"><apiName>STARTUP_COMPLETE</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>startupComplete</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextEventType:STARTUP"><apiName>STARTUP</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>startup</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue></apiClassifier><apiClassifier id="org.robotlegs.starling.base:EventMap"><apiName>EventMap</apiName><shortdesc>
+	 An abstract IEventMap implementation
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>org.robotlegs.starling.core:IEventMap</apiBaseInterface><apiBaseClassifier>Object</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 An abstract <codeph>IEventMap</codeph> implementation
+	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.starling.base:EventMap:EventMap"><apiName>EventMap</apiName><shortdesc>
+		 Creates a new EventMap object
+		 
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>eventDispatcher</apiItemName><apiType value="starling.events:EventDispatcher"/><apiDesc>An <codeph>IEventDispatcher</codeph> to treat as a bus
+		 </apiDesc></apiParam></apiConstructorDef><apiDesc>
+		 Creates a new <codeph>EventMap</codeph> object
+		 
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="org.robotlegs.starling.base:EventMap:mapListener"><apiName>mapListener</apiName><shortdesc>
+		 The same as calling addEventListener directly on the EventDispatcher,
+		 but keeps a list of listeners for easy (usually automatic) removal.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>dispatcher</apiItemName><apiType value="starling.events:EventDispatcher"/><apiDesc>The <codeph>IEventDispatcher</codeph> to listen to
+		 </apiDesc></apiParam><apiParam><apiItemName>type</apiItemName><apiType value="String"/><apiDesc>The <codeph>Event</codeph> type to listen for
+		 </apiDesc></apiParam><apiParam><apiItemName>listener</apiItemName><apiType value="Function"/><apiDesc>The <codeph>Event</codeph> handler
+		 </apiDesc></apiParam><apiParam><apiItemName>eventClass</apiItemName><apiType value="Class"/><apiData>null</apiData><apiDesc>Optional Event class for a stronger mapping. Defaults to <codeph>starling.events.Event</codeph>.
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 The same as calling <codeph>addEventListener</codeph> directly on the <codeph>EventDispatcher</codeph>,
+		 but keeps a list of listeners for easy (usually automatic) removal.
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:EventMap:protected:routeEventToListener"><apiName>routeEventToListener</apiName><shortdesc>
+		 Event Handler
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="protected"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>event</apiItemName><apiType value="starling.events:Event"/><apiDesc>The <codeph>Event</codeph>
+		 </apiDesc></apiParam><apiParam><apiItemName>listener</apiItemName><apiType value="Function"/><apiDesc>	 </apiDesc></apiParam><apiParam><apiItemName>originalEventClass</apiItemName><apiType value="Class"/><apiDesc>	 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 Event Handler
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:EventMap:unmapListener"><apiName>unmapListener</apiName><shortdesc>
+		 The same as calling removeEventListener directly on the EventDispatcher,
+		 but updates our local list of listeners.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>dispatcher</apiItemName><apiType value="starling.events:EventDispatcher"/><apiDesc>The <codeph>IEventDispatcher</codeph>
+		 </apiDesc></apiParam><apiParam><apiItemName>type</apiItemName><apiType value="String"/><apiDesc>The <codeph>Event</codeph> type
+		 </apiDesc></apiParam><apiParam><apiItemName>listener</apiItemName><apiType value="Function"/><apiDesc>The <codeph>Event</codeph> handler
+		 </apiDesc></apiParam><apiParam><apiItemName>eventClass</apiItemName><apiType value="Class"/><apiData>null</apiData><apiDesc>Optional Event class for a stronger mapping. Defaults to <codeph>starling.events.Event</codeph>.
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 The same as calling <codeph>removeEventListener</codeph> directly on the <codeph>EventDispatcher</codeph>,
+		 but updates our local list of listeners.
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:EventMap:unmapListeners"><apiName>unmapListeners</apiName><shortdesc>
+		 Removes all listeners registered through mapListener
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn></apiOperationDef><apiDesc>
+		 Removes all listeners registered through <codeph>mapListener</codeph>
+		 </apiDesc></apiOperationDetail></apiOperation><apiValue id="org.robotlegs.starling.base:EventMap:protected:eventDispatcher"><apiName>eventDispatcher</apiName><shortdesc>
+		 The EventDispatcher
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="starling.events:EventDispatcher"/></apiValueDef><apiDesc>
+		 The <codeph>EventDispatcher</codeph>
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:EventMap:dispatcherListeningEnabled:get"><apiName>dispatcherListeningEnabled</apiName><shortdesc>
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="readwrite"/><apiType value="Boolean"/></apiValueDef><apiDesc>
+		 </apiDesc></apiValueDetail></apiValue></apiClassifier><apiClassifier id="org.robotlegs.starling.base:ContextError"><apiName>ContextError</apiName><shortdesc>
+	 A framework Error implementation
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseClassifier>Error</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 A framework Error implementation
+	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.starling.base:ContextError:ContextError"><apiName>ContextError</apiName><shortdesc/><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>message</apiItemName><apiType value="String"/><apiData/></apiParam><apiParam><apiItemName>id</apiItemName><apiType value="int"/><apiData>0</apiData></apiParam></apiConstructorDef></apiConstructorDetail></apiConstructor><apiValue id="org.robotlegs.starling.base:ContextError:E_COMMANDMAP_NOIMPL"><apiName>E_COMMANDMAP_NOIMPL</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>Command Class does not implement an execute() method</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextError:E_COMMANDMAP_OVR"><apiName>E_COMMANDMAP_OVR</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>Cannot overwrite map</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextError:E_CONTEXT_INJECTOR"><apiName>E_CONTEXT_INJECTOR</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>The ContextBase does not specify a concrete IInjector. Please override the injector getter in your concrete or abstract Context.</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextError:E_CONTEXT_REFLECTOR"><apiName>E_CONTEXT_REFLECTOR</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>The ContextBase does not specify a concrete IReflector. Please override the reflector getter in your concrete or abstract Context.</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextError:E_CONTEXT_VIEW_OVR"><apiName>E_CONTEXT_VIEW_OVR</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>Context contextView must only be set once</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextError:E_EVENTMAP_NOSNOOPING"><apiName>E_EVENTMAP_NOSNOOPING</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>Listening to the context eventDispatcher is not enabled for this EventMap</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextError:E_MEDIATORMAP_NOIMPL"><apiName>E_MEDIATORMAP_NOIMPL</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>Mediator Class does not implement IMediator</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:ContextError:E_MEDIATORMAP_OVR"><apiName>E_MEDIATORMAP_OVR</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="public"/><apiStatic/><apiData>Mediator Class has already been mapped to a View Class in this context</apiData><apiType value="String"/></apiValueDef></apiValueDetail></apiValue></apiClassifier><apiClassifier id="org.robotlegs.starling.base:MediatorMap"><apiName>MediatorMap</apiName><shortdesc>
+	 An abstract IMediatorMap implementation
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>org.robotlegs.starling.core:IMediatorMap</apiBaseInterface><apiBaseClassifier>org.robotlegs.starling.base:ViewMapBase</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 An abstract <codeph>IMediatorMap</codeph> implementation
+	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.starling.base:MediatorMap:MediatorMap"><apiName>MediatorMap</apiName><shortdesc>
+		 Creates a new MediatorMap object
+		 
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>contextView</apiItemName><apiType value="starling.display:DisplayObjectContainer"/><apiDesc>The root view node of the context. The map will listen for ADDED_TO_STAGE events on this node
+		 </apiDesc></apiParam><apiParam><apiItemName>injector</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IInjector</apiOperationClassifier><apiDesc>An <codeph>IInjector</codeph> to use for this context
+		 </apiDesc></apiParam><apiParam><apiItemName>reflector</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IReflector</apiOperationClassifier><apiDesc>An <codeph>IReflector</codeph> to use for this context
+		 </apiDesc></apiParam></apiConstructorDef><apiDesc>
+		 Creates a new <codeph>MediatorMap</codeph> object
+		 
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="org.robotlegs.starling.base:MediatorMap:createMediator"><apiName>createMediator</apiName><shortdesc>
+		 
+		 Create an instance of a mapped IMediator
+		 
+		 This will instantiate and register a Mediator for a given View Component.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>The <codeph>IMediator</codeph>
+		 </apiDesc><apiOperationClassifier>org.robotlegs.starling.core:IMediator</apiOperationClassifier></apiReturn><apiParam><apiItemName>viewComponent</apiItemName><apiType value="Object"/><apiDesc>An instance of the view Class previously mapped to an <codeph>IMediator</codeph> Class
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Create an instance of a mapped <codeph>IMediator</codeph>
+		 
+		 <p>This will instantiate and register a Mediator for a given View Component.
+		 Mediator dependencies will be automatically resolved.</p>
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:hasMapping"><apiName>hasMapping</apiName><shortdesc>
+		 
+		 Check if the view Class has been mapped or not
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>Whether this view class has been mapped
+		 </apiDesc><apiType value="Boolean"/></apiReturn><apiParam><apiItemName>viewClassOrName</apiItemName><apiType value="any"/><apiDesc>The concrete view Class or Fully Qualified Class Name
+		 
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Check if the view Class has been mapped or not
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:hasMediatorForView"><apiName>hasMediatorForView</apiName><shortdesc>
+		 
+		 Check if an IMediator has been registered for a view instance
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>Whether an <codeph>IMediator</codeph> has been registered for this view instance
+		 </apiDesc><apiType value="Boolean"/></apiReturn><apiParam><apiItemName>viewComponent</apiItemName><apiType value="Object"/><apiDesc>The view that the <codeph>IMediator</codeph> was registered with
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Check if an <codeph>IMediator</codeph> has been registered for a view instance
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:hasMediator"><apiName>hasMediator</apiName><shortdesc>
+		 
+		 Check if the IMediator has been registered
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>Whether this <codeph>IMediator</codeph> has been registered
+		 </apiDesc><apiType value="Boolean"/></apiReturn><apiParam><apiItemName>mediator</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IMediator</apiOperationClassifier><apiDesc>The <codeph>IMediator</codeph> instance
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Check if the <codeph>IMediator</codeph> has been registered
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:mapView"><apiName>mapView</apiName><shortdesc>
+		 
+		 Map an IMediator to a view Class
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>viewClassOrName</apiItemName><apiType value="any"/><apiDesc>The concrete view Class or Fully Qualified Class Name
+		 </apiDesc></apiParam><apiParam><apiItemName>mediatorClass</apiItemName><apiType value="Class"/><apiDesc>The <codeph>IMediator</codeph> Class
+		 </apiDesc></apiParam><apiParam><apiItemName>injectViewAs</apiItemName><apiType value="any"/><apiData>null</apiData><apiDesc>The explicit view Interface or Class that the mediator depends on OR an Array of such Interfaces/Classes.
+		 </apiDesc></apiParam><apiParam><apiItemName>autoCreate</apiItemName><apiType value="Boolean"/><apiData>true</apiData><apiDesc>Automatically construct and register an instance of Class <codeph>mediatorClass</codeph> when an instance of Class <codeph>viewClass</codeph> is detected
+		 </apiDesc></apiParam><apiParam><apiItemName>autoRemove</apiItemName><apiType value="Boolean"/><apiData>true</apiData><apiDesc>Automatically remove an instance of Class <codeph>mediatorClass</codeph> when its <codeph>viewClass</codeph> leaves the ancestory of the context view
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Map an <codeph>IMediator</codeph> to a view Class
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:protected:onViewRemoved"><apiName>onViewRemoved</apiName><shortdesc>
+		 Flex framework work-around part #5
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="protected"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>e</apiItemName><apiType value="starling.events:Event"/></apiParam></apiOperationDef><apiDesc>
+		 Flex framework work-around part #5
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:registerMediator"><apiName>registerMediator</apiName><shortdesc>
+		 
+		 Manually register an IMediator instance
+		 
+		 NOTE: Registering a Mediator will NOT inject its dependencies.</shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>viewComponent</apiItemName><apiType value="Object"/><apiDesc>The view component for the <codeph>IMediator</codeph>
+		 </apiDesc></apiParam><apiParam><apiItemName>mediator</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IMediator</apiOperationClassifier><apiDesc>The <codeph>IMediator</codeph> to register
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Manually register an <codeph>IMediator</codeph> instance
+		 
+		 <p>NOTE: Registering a Mediator will NOT inject its dependencies.
+		 It is assumed that dependencies are already satisfied.</p>
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:removeMediatorByView"><apiName>removeMediatorByView</apiName><shortdesc>
+		 
+		 Remove a registered IMediator instance
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>The <codeph>IMediator</codeph> that was removed
+		 </apiDesc><apiOperationClassifier>org.robotlegs.starling.core:IMediator</apiOperationClassifier></apiReturn><apiParam><apiItemName>viewComponent</apiItemName><apiType value="Object"/><apiDesc>The view that the <codeph>IMediator</codeph> was registered with
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Remove a registered <codeph>IMediator</codeph> instance
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:protected:removeMediatorLater"><apiName>removeMediatorLater</apiName><shortdesc>
+		 Flex framework work-around part #6
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="protected"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>event</apiItemName><apiType value="starling.events:Event"/></apiParam></apiOperationDef><apiDesc>
+		 Flex framework work-around part #6
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:removeMediator"><apiName>removeMediator</apiName><shortdesc>
+		 
+		 Remove a registered IMediator instance
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>The <codeph>IMediator</codeph> that was removed
+		 </apiDesc><apiOperationClassifier>org.robotlegs.starling.core:IMediator</apiOperationClassifier></apiReturn><apiParam><apiItemName>mediator</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IMediator</apiOperationClassifier><apiDesc>The <codeph>IMediator</codeph> to remove
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Remove a registered <codeph>IMediator</codeph> instance
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:retrieveMediator"><apiName>retrieveMediator</apiName><shortdesc>
+		 
+		 Retrieve a registered IMediator instance
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>The <codeph>IMediator</codeph>
+		 </apiDesc><apiOperationClassifier>org.robotlegs.starling.core:IMediator</apiOperationClassifier></apiReturn><apiParam><apiItemName>viewComponent</apiItemName><apiType value="Object"/><apiDesc>The view that the <codeph>IMediator</codeph> was registered with
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Retrieve a registered <codeph>IMediator</codeph> instance
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorMap:unmapView"><apiName>unmapView</apiName><shortdesc>
+		 
+		 Unmap a view Class
+		  
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>viewClassOrName</apiItemName><apiType value="any"/><apiDesc>The concrete view Class or Fully Qualified Class Name
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Unmap a view Class
+		  
+		 </apiDesc></apiOperationDetail></apiOperation></apiClassifier><apiClassifier id="org.robotlegs.starling.base:ViewMapBase"><apiName>ViewMapBase</apiName><shortdesc>
+	 A base ViewMap implementation
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseClassifier>Object</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 A base ViewMap implementation
+	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.starling.base:ViewMapBase:ViewMapBase"><apiName>ViewMapBase</apiName><shortdesc>
+		 Creates a new ViewMap object
+		 
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>contextView</apiItemName><apiType value="starling.display:DisplayObjectContainer"/><apiDesc>The root view node of the context. The map will listen for ADDED_TO_STAGE events on this node
+		 </apiDesc></apiParam><apiParam><apiItemName>injector</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IInjector</apiOperationClassifier><apiDesc>An <codeph>IInjector</codeph> to use for this context
+		 </apiDesc></apiParam></apiConstructorDef><apiDesc>
+		 Creates a new <codeph>ViewMap</codeph> object
+		 
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiValue id="org.robotlegs.starling.base:ViewMapBase:contextView:get"><apiName>contextView</apiName><shortdesc>
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="readwrite"/><apiType value="starling.display:DisplayObjectContainer"/></apiValueDef><apiDesc>
+		 </apiDesc></apiValueDetail><apiInheritDoc/></apiValue><apiValue id="org.robotlegs.starling.base:ViewMapBase:enabled:get"><apiName>enabled</apiName><shortdesc>
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="readwrite"/><apiType value="Boolean"/></apiValueDef><apiDesc>
+		 </apiDesc></apiValueDetail><apiInheritDoc/></apiValue></apiClassifier><apiClassifier id="org.robotlegs.starling.base:MediatorBase"><apiName>MediatorBase</apiName><shortdesc>
+	 An abstract IMediator implementation
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>org.robotlegs.starling.core:IMediator</apiBaseInterface><apiBaseClassifier>Object</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 An abstract <codeph>IMediator</codeph> implementation
+	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.starling.base:MediatorBase:MediatorBase"><apiName>MediatorBase</apiName><shortdesc>
+		 Creates a new Mediator object
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/></apiConstructorDef><apiDesc>
+		 Creates a new <codeph>Mediator</codeph> object
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="org.robotlegs.starling.base:MediatorBase:protected:checkFeathers"><apiName>checkFeathers</apiName><shortdesc>
+		 Feathers work-around part #3
+		 
+		 Checks for availability of Feathers by trying to get the class for IFeathersControl.
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="protected"/><apiStatic/><apiReturn><apiType value="Boolean"/></apiReturn></apiOperationDef><apiDesc>
+		 Feathers work-around part #3
+		 
+		 <p>Checks for availability of Feathers by trying to get the class for IFeathersControl.</p>
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorBase:getViewComponent"><apiName>getViewComponent</apiName><shortdesc>
+		 
+		 The IMediator's view component
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>The view component
+		 </apiDesc><apiType value="Object"/></apiReturn></apiOperationDef><apiDesc>
+		 
+		 The <codeph>IMediator</codeph>'s view component
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorBase:protected:onCreationComplete"><apiName>onCreationComplete</apiName><shortdesc>
+		 Feathers work-around part #4
+		 
+		 FeathersEventType.CREATION_COMPLETE handler for this Mediator's View Component
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="protected"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>e</apiItemName><apiType value="starling.events:Event"/><apiDesc>The event
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 Feathers work-around part #4
+		 
+		 <p><codeph>FeathersEventType.CREATION_COMPLETE</codeph> handler for this Mediator's View Component</p>
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorBase:onRegister"><apiName>onRegister</apiName><shortdesc>
+		 
+		 Should be invoked by the IMediator itself when it is ready to be interacted with
+		 
+		 Override and place your initialization code here
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn></apiOperationDef><apiDesc>
+		 
+		 Should be invoked by the <codeph>IMediator</codeph> itself when it is ready to be interacted with
+		 
+		 <p>Override and place your initialization code here</p>
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorBase:onRemove"><apiName>onRemove</apiName><shortdesc>
+		 
+		 Should be invoked by the IMediator itself when it is ready to for cleanup
+		 
+		 Override and place your cleanup code here
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn></apiOperationDef><apiDesc>
+		 
+		 Should be invoked by the <codeph>IMediator</codeph> itself when it is ready to for cleanup
+		 
+		 <p>Override and place your cleanup code here</p>
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorBase:preRegister"><apiName>preRegister</apiName><shortdesc>
+		 
+		 Should be invoked by the IMediatorMap during IMediator registration
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn></apiOperationDef><apiDesc>
+		 
+		 Should be invoked by the <codeph>IMediatorMap</codeph> during <codeph>IMediator</codeph> registration
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorBase:preRemove"><apiName>preRemove</apiName><shortdesc>
+		 
+		 Invoked when the IMediator has been removed by the IMediatorMap
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn></apiOperationDef><apiDesc>
+		 
+		 Invoked when the <codeph>IMediator</codeph> has been removed by the <codeph>IMediatorMap</codeph>
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:MediatorBase:setViewComponent"><apiName>setViewComponent</apiName><shortdesc>
+		 
+		 The IMediator's view component
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>viewComponent</apiItemName><apiType value="Object"/><apiDesc>view component
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 The <codeph>IMediator</codeph>'s view component
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiValue id="org.robotlegs.starling.base:MediatorBase:protected:FeathersControlType"><apiName>FeathersControlType</apiName><shortdesc>
+		 Feathers work-around part #1
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiStatic/><apiType value="Class"/></apiValueDef><apiDesc>
+		 Feathers work-around part #1
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:MediatorBase:protected:feathersAvailable"><apiName>feathersAvailable</apiName><shortdesc>
+		 Feathers work-around part #2
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiAccess value="protected"/><apiStatic/><apiData>unknown</apiData><apiType value="Boolean"/></apiValueDef><apiDesc>
+		 Feathers work-around part #2
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:MediatorBase:protected:removed"><apiName>removed</apiName><shortdesc>
+		 Internal
+		 
+		 In the case of deffered instantiation, onRemove might get called before
+		 onCreationComplete has fired.</shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="Boolean"/></apiValueDef><apiDesc>
+		 Internal
+		 
+		 <p>In the case of deffered instantiation, onRemove might get called before
+		 onCreationComplete has fired. This here Bool helps us track that scenario.</p>
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:MediatorBase:protected:viewComponent"><apiName>viewComponent</apiName><shortdesc>
+		 Internal
+		 
+		 This Mediator's View Component - used by the RobotLegs MVCS framework internally.</shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="Object"/></apiValueDef><apiDesc>
+		 Internal
+		 
+		 <p>This Mediator's View Component - used by the RobotLegs MVCS framework internally.
+		 You should declare a dependency on a concrete view component in your
+		 implementation instead of working with this property</p>
+		 </apiDesc></apiValueDetail></apiValue></apiClassifier><apiClassifier id="org.robotlegs.starling.base:ViewMap"><apiName>ViewMap</apiName><shortdesc>
+	 An abstract IViewMap implementation
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>org.robotlegs.starling.core:IViewMap</apiBaseInterface><apiBaseClassifier>org.robotlegs.starling.base:ViewMapBase</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 An abstract <codeph>IViewMap</codeph> implementation
+	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.starling.base:ViewMap:ViewMap"><apiName>ViewMap</apiName><shortdesc>
+		 Creates a new ViewMap object
+		 
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>contextView</apiItemName><apiType value="starling.display:DisplayObjectContainer"/><apiDesc>The root view node of the context. The map will listen for ADDED_TO_STAGE events on this node
+		 </apiDesc></apiParam><apiParam><apiItemName>injector</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IInjector</apiOperationClassifier><apiDesc>An <codeph>IInjector</codeph> to use for this context
+		 </apiDesc></apiParam></apiConstructorDef><apiDesc>
+		 Creates a new <codeph>ViewMap</codeph> object
+		 
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="org.robotlegs.starling.base:ViewMap:hasPackage"><apiName>hasPackage</apiName><shortdesc>
+		 
+		 Check if a package has been registered for automatic injection
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>Whether a package has been registered for automatic injection
+		 </apiDesc><apiType value="Boolean"/></apiReturn><apiParam><apiItemName>packageName</apiItemName><apiType value="String"/><apiDesc>The substring to compare
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Check if a package has been registered for automatic injection
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:ViewMap:hasType"><apiName>hasType</apiName><shortdesc>
+		 
+		 Check if a class or interface has been registered for automatic injection
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>Whether an interface has been registered for automatic injection
+		 </apiDesc><apiType value="Boolean"/></apiReturn><apiParam><apiItemName>type</apiItemName><apiType value="Class"/><apiDesc>The concrete view interface 
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Check if a class or interface has been registered for automatic injection
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:ViewMap:protected:injectInto"><apiName>injectInto</apiName><shortdesc/><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="protected"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>target</apiItemName><apiType value="starling.display:DisplayObject"/></apiParam></apiOperationDef></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:ViewMap:mapPackage"><apiName>mapPackage</apiName><shortdesc>
+		 
+		 Map an entire package (including sub-packages) for automatic injection
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>packageName</apiItemName><apiType value="String"/><apiDesc>The substring to compare
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Map an entire package (including sub-packages) for automatic injection
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:ViewMap:mapType"><apiName>mapType</apiName><shortdesc>
+		 
+		 Map a view component class or interface for automatic injection
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>type</apiItemName><apiType value="Class"/><apiDesc>The concrete view Interface
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Map a view component class or interface for automatic injection
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:ViewMap:unmapPackage"><apiName>unmapPackage</apiName><shortdesc>
+		 
+		 Unmap a package
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>packageName</apiItemName><apiType value="String"/><apiDesc>The substring to compare
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Unmap a package
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:ViewMap:unmapType"><apiName>unmapType</apiName><shortdesc>
+		 
+		 Unmap a view component class or interface
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>type</apiItemName><apiType value="Class"/><apiDesc>The concrete view Interface
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Unmap a view component class or interface
+		 
+		 </apiDesc></apiOperationDetail></apiOperation></apiClassifier><apiClassifier id="org.robotlegs.starling.base:CommandMap"><apiName>CommandMap</apiName><shortdesc>
+	 An abstract ICommandMap implementation
+	 </shortdesc><prolog><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>org.robotlegs.starling.core:ICommandMap</apiBaseInterface><apiBaseClassifier>Object</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 An abstract <codeph>ICommandMap</codeph> implementation
+	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.starling.base:CommandMap:CommandMap"><apiName>CommandMap</apiName><shortdesc>
+		 Creates a new CommandMap object
+		 
+		 </shortdesc><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>eventDispatcher</apiItemName><apiType value="starling.events:EventDispatcher"/><apiDesc>The <codeph>EventDispatcher</codeph> to listen to
+		 </apiDesc></apiParam><apiParam><apiItemName>injector</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IInjector</apiOperationClassifier><apiDesc>An <codeph>IInjector</codeph> to use for this context
+		 </apiDesc></apiParam><apiParam><apiItemName>reflector</apiItemName><apiOperationClassifier>org.robotlegs.starling.core:IReflector</apiOperationClassifier><apiDesc>An <codeph>IReflector</codeph> to use for this context
+		 </apiDesc></apiParam></apiConstructorDef><apiDesc>
+		 Creates a new <codeph>CommandMap</codeph> object
+		 
+		 </apiDesc></apiConstructorDetail></apiConstructor><apiOperation id="org.robotlegs.starling.base:CommandMap:detain"><apiName>detain</apiName><shortdesc>
+		 
+		 Detain a Command instance
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>command</apiItemName><apiType value="Object"/><apiDesc>The Command instance to detain
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Detain a Command instance
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:CommandMap:execute"><apiName>execute</apiName><shortdesc>
+		 
+		 Execute a Command with an optional payload
+		 
+		 The commandClass must implement an execute() method
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>commandClass</apiItemName><apiType value="Class"/><apiDesc>The Class to instantiate - must have an execute() method
+		 </apiDesc></apiParam><apiParam><apiItemName>payload</apiItemName><apiType value="Object"/><apiData>null</apiData><apiDesc>An optional payload
+		 </apiDesc></apiParam><apiParam><apiItemName>payloadClass</apiItemName><apiType value="Class"/><apiData>null</apiData><apiDesc> An optional class to inject the payload as
+		 </apiDesc></apiParam><apiParam><apiItemName>named</apiItemName><apiType value="String"/><apiData/><apiDesc>An optional name for the payload injection
+		 
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Execute a Command with an optional payload
+		 
+		 <p>The <codeph>commandClass</codeph> must implement an execute() method</p>
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:CommandMap:hasEventCommand"><apiName>hasEventCommand</apiName><shortdesc>
+		 
+		 Check if a Class has been mapped to an Event type
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>Whether the Class is mapped to this Event type
+		 </apiDesc><apiType value="Boolean"/></apiReturn><apiParam><apiItemName>eventType</apiItemName><apiType value="String"/><apiDesc>The Event type
+		 </apiDesc></apiParam><apiParam><apiItemName>commandClass</apiItemName><apiType value="Class"/><apiDesc>The Class
+		 </apiDesc></apiParam><apiParam><apiItemName>eventClass</apiItemName><apiType value="Class"/><apiData>null</apiData><apiDesc>Optional Event class for a stronger mapping. Defaults to <codeph>flash.events.Event</codeph>.
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Check if a Class has been mapped to an Event type
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:CommandMap:mapEvent"><apiName>mapEvent</apiName><shortdesc>
+		 
+		 Map a Class to an Event type
+		 
+		 The commandClass must implement an execute() method
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>eventType</apiItemName><apiType value="String"/><apiDesc>The Event type to listen for
+		 </apiDesc></apiParam><apiParam><apiItemName>commandClass</apiItemName><apiType value="Class"/><apiDesc>The Class to instantiate - must have an execute() method
+		 </apiDesc></apiParam><apiParam><apiItemName>eventClass</apiItemName><apiType value="Class"/><apiData>null</apiData><apiDesc>Optional Event class for a stronger mapping. Defaults to <codeph>flash.events.Event</codeph>. Your commandClass can optionally [Inject] a variable of this type to access the event that triggered the command.
+		 </apiDesc></apiParam><apiParam><apiItemName>oneshot</apiItemName><apiType value="Boolean"/><apiData>false</apiData><apiDesc>Unmap the Class after execution?
+		 
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Map a Class to an Event type
+		 
+		 <p>The <codeph>commandClass</codeph> must implement an execute() method</p>
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:CommandMap:release"><apiName>release</apiName><shortdesc>
+		 
+		 Release a Command instance
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>command</apiItemName><apiType value="Object"/><apiDesc>The Command instance to release for garbage collection
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Release a Command instance
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:CommandMap:protected:routeEventToCommand"><apiName>routeEventToCommand</apiName><shortdesc>
+		 Event Handler
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="protected"/><apiReturn><apiDesc><codeph>true</codeph> if the event was routed to a Command and the Command was executed,
+                 <codeph>false</codeph> otherwise
+		 </apiDesc><apiType value="Boolean"/></apiReturn><apiParam><apiItemName>event</apiItemName><apiType value="starling.events:Event"/><apiDesc>The <codeph>Event</codeph>
+		 </apiDesc></apiParam><apiParam><apiItemName>commandClass</apiItemName><apiType value="Class"/><apiDesc>The Class to construct and execute
+		 </apiDesc></apiParam><apiParam><apiItemName>oneshot</apiItemName><apiType value="Boolean"/><apiDesc>Should this command mapping be removed after execution?
+         </apiDesc></apiParam><apiParam><apiItemName>originalEventClass</apiItemName><apiType value="Class"/></apiParam></apiOperationDef><apiDesc>
+		 Event Handler
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:CommandMap:unmapEvent"><apiName>unmapEvent</apiName><shortdesc>
+		 
+		 Unmap a Class to Event type mapping
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>eventType</apiItemName><apiType value="String"/><apiDesc>The Event type
+		 </apiDesc></apiParam><apiParam><apiItemName>commandClass</apiItemName><apiType value="Class"/><apiDesc>The Class to unmap
+		 </apiDesc></apiParam><apiParam><apiItemName>eventClass</apiItemName><apiType value="Class"/><apiData>null</apiData><apiDesc>Optional Event class for a stronger mapping. Defaults to <codeph>flash.events.Event</codeph>.
+		 </apiDesc></apiParam></apiOperationDef><apiDesc>
+		 
+		 Unmap a Class to Event type mapping
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:CommandMap:unmapEvents"><apiName>unmapEvents</apiName><shortdesc>
+		 
+		 Removes all mappings made through mapEvent
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiType value="void"/></apiReturn></apiOperationDef><apiDesc>
+		 
+		 Removes all mappings made through <codeph>mapEvent</codeph>
+		 </apiDesc></apiOperationDetail></apiOperation><apiOperation id="org.robotlegs.starling.base:CommandMap:protected:verifyCommandClass"><apiName>verifyCommandClass</apiName><shortdesc>
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="protected"/><apiException><apiDesc></apiDesc><apiItemName>org.robotlegs.starling.base::ContextError
+		</apiItemName><apiOperationClassifier>org.robotlegs.starling.base::ContextError
+		</apiOperationClassifier></apiException><apiReturn><apiType value="void"/></apiReturn><apiParam><apiItemName>commandClass</apiItemName><apiType value="Class"/></apiParam></apiOperationDef><apiDesc>
+		 </apiDesc></apiOperationDetail></apiOperation><apiValue id="org.robotlegs.starling.base:CommandMap:protected:detainedCommands"><apiName>detainedCommands</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="flash.utils:Dictionary"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:CommandMap:protected:eventDispatcher"><apiName>eventDispatcher</apiName><shortdesc>
+		 The EventDispatcher to listen to
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="starling.events:EventDispatcher"/></apiValueDef><apiDesc>
+		 The <codeph>EventDispatcher</codeph> to listen to
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:CommandMap:protected:eventTypeMap"><apiName>eventTypeMap</apiName><shortdesc>
+		 Internal
+		 
+		 TODO: This needs to be documented
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="flash.utils:Dictionary"/></apiValueDef><apiDesc>
+		 Internal
+		 
+		 TODO: This needs to be documented
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:CommandMap:protected:injector"><apiName>injector</apiName><shortdesc>
+		 The IInjector to inject with
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiValueClassifier>org.robotlegs.starling.core:IInjector</apiValueClassifier></apiValueDef><apiDesc>
+		 The <codeph>IInjector</codeph> to inject with
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:CommandMap:protected:reflector"><apiName>reflector</apiName><shortdesc>
+		 The IReflector to reflect with
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiValueClassifier>org.robotlegs.starling.core:IReflector</apiValueClassifier></apiValueDef><apiDesc>
+		 The <codeph>IReflector</codeph> to reflect with
+		 </apiDesc></apiValueDetail></apiValue><apiValue id="org.robotlegs.starling.base:CommandMap:protected:verifiedCommandClasses"><apiName>verifiedCommandClasses</apiName><shortdesc>
+		 Internal
+		 
+		 Collection of command classes that have been verified to implement an execute method
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="protected"/><apiDynamic/><apiType value="flash.utils:Dictionary"/></apiValueDef><apiDesc>
+		 Internal
+		 
+		 Collection of command classes that have been verified to implement an <codeph>execute</codeph> method
+		 </apiDesc></apiValueDetail></apiValue></apiClassifier></apiPackage>

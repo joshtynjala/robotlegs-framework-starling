@@ -1,0 +1,2714 @@
+<asdoc>
+
+<interfaceRec name='IMediator' fullname='org.robotlegs.starling.core:IMediator' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\core\IMediator.as' namespace='org.robotlegs.starling.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 The Robotlegs Mediator contract
+
+	 ]]></description>
+</interfaceRec>
+<method name='getViewComponent' fullname='org.robotlegs.starling.core:IMediator/org.robotlegs.starling.core:IMediator:getViewComponent' isStatic='false' isFinal='false' isOverride='false'  result_type='Object'>
+<description><![CDATA[
+
+		 The <code>IMediator</code>'s view component
+
+		 
+		 ]]></description>
+<return><![CDATA[The view component
+
+		 ]]></return>
+</method>
+<method name='onRegister' fullname='org.robotlegs.starling.core:IMediator/org.robotlegs.starling.core:IMediator:onRegister' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 Should be invoked by the <code>IMediator</code> itself when it is ready to be interacted with
+
+		 
+		 <p>Override and place your initialization code here</p>
+
+		 ]]></description>
+</method>
+<method name='onRemove' fullname='org.robotlegs.starling.core:IMediator/org.robotlegs.starling.core:IMediator:onRemove' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 Should be invoked by the <code>IMediator</code> itself when it is ready to for cleanup
+
+		 
+		 <p>Override and place your cleanup code here</p>
+
+		 ]]></description>
+</method>
+<method name='preRegister' fullname='org.robotlegs.starling.core:IMediator/org.robotlegs.starling.core:IMediator:preRegister' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 Should be invoked by the <code>IMediatorMap</code> during <code>IMediator</code> registration
+
+		 ]]></description>
+</method>
+<method name='preRemove' fullname='org.robotlegs.starling.core:IMediator/org.robotlegs.starling.core:IMediator:preRemove' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 Invoked when the <code>IMediator</code> has been removed by the <code>IMediatorMap</code>
+
+		 ]]></description>
+</method>
+<method name='setViewComponent' fullname='org.robotlegs.starling.core:IMediator/org.robotlegs.starling.core:IMediator:setViewComponent' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 The <code>IMediator</code>'s view component
+
+		 
+		 ]]></description>
+<param><![CDATA[The view component
+
+		 ]]></param>
+</method>
+<interfaceRec name='ICommandMap' fullname='org.robotlegs.starling.core:ICommandMap' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\core\ICommandMap.as' namespace='org.robotlegs.starling.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 The Robotlegs CommandMap contract
+
+	 ]]></description>
+</interfaceRec>
+<method name='detain' fullname='org.robotlegs.starling.core:ICommandMap/org.robotlegs.starling.core:ICommandMap:detain' isStatic='false' isFinal='false' isOverride='false'  param_names='command' param_types='Object' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Detain a Command instance
+
+		 
+
+		 ]]></description>
+<param><![CDATA[command The Command instance to detain
+
+		 ]]></param>
+</method>
+<method name='execute' fullname='org.robotlegs.starling.core:ICommandMap/org.robotlegs.starling.core:ICommandMap:execute' isStatic='false' isFinal='false' isOverride='false'  param_names='commandClass;payload;payloadClass;named' param_types='Class;Object;Class;String' param_defaults='undefined;null;null;' result_type='void'>
+<description><![CDATA[
+
+		 Execute a Command with an optional payload
+
+		 
+
+		 <p>The <code>commandClass</code> must implement an execute() method</p>
+
+		 
+
+		 ]]></description>
+<param><![CDATA[commandClass The Class to instantiate - must have an execute() method
+
+		 ]]></param>
+<param><![CDATA[payload An optional payload
+
+		 ]]></param>
+<param><![CDATA[payloadClass  An optional class to inject the payload as
+
+		 ]]></param>
+<param><![CDATA[named An optional name for the payload injection
+
+		 
+
+		 ]]></param>
+<throws><![CDATA[org.robotlegs.starling.base::ContextError
+
+		 ]]></throws>
+</method>
+<method name='hasEventCommand' fullname='org.robotlegs.starling.core:ICommandMap/org.robotlegs.starling.core:ICommandMap:hasEventCommand' isStatic='false' isFinal='false' isOverride='false'  param_names='eventType;commandClass;eventClass' param_types='String;Class;Class' param_defaults='undefined;undefined;null' result_type='Boolean'>
+<description><![CDATA[
+
+		 Check if a Class has been mapped to an Event type
+
+		 
+		 ]]></description>
+<param><![CDATA[eventType The Event type
+
+		 ]]></param>
+<param><![CDATA[commandClass The Class
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>flash.events.Event</code>.
+
+		 ]]></param>
+<return><![CDATA[Whether the Class is mapped to this Event type
+
+		 ]]></return>
+</method>
+<method name='mapEvent' fullname='org.robotlegs.starling.core:ICommandMap/org.robotlegs.starling.core:ICommandMap:mapEvent' isStatic='false' isFinal='false' isOverride='false'  param_names='eventType;commandClass;eventClass;oneshot' param_types='String;Class;Class;Boolean' param_defaults='undefined;undefined;null;false' result_type='void'>
+<description><![CDATA[
+
+		 Map a Class to an Event type
+
+		 
+
+		 <p>The <code>commandClass</code> must implement an execute() method</p>
+
+		 
+
+		 ]]></description>
+<param><![CDATA[eventType The Event type to listen for
+
+		 ]]></param>
+<param><![CDATA[commandClass The Class to instantiate - must have an execute() method
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>flash.events.Event</code>. Your commandClass can optionally [Inject] a variable of this type to access the event that triggered the command.
+
+		 ]]></param>
+<param><![CDATA[oneshot Unmap the Class after execution?
+
+		 
+
+		 ]]></param>
+<throws><![CDATA[org.robotlegs.starling.base::ContextError
+
+		 ]]></throws>
+</method>
+<method name='release' fullname='org.robotlegs.starling.core:ICommandMap/org.robotlegs.starling.core:ICommandMap:release' isStatic='false' isFinal='false' isOverride='false'  param_names='command' param_types='Object' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Release a Command instance
+
+		 
+
+		 ]]></description>
+<param><![CDATA[command The Command instance to release for garbage collection
+
+		 ]]></param>
+</method>
+<method name='unmapEvent' fullname='org.robotlegs.starling.core:ICommandMap/org.robotlegs.starling.core:ICommandMap:unmapEvent' isStatic='false' isFinal='false' isOverride='false'  param_names='eventType;commandClass;eventClass' param_types='String;Class;Class' param_defaults='undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 Unmap a Class to Event type mapping
+
+		 
+		 ]]></description>
+<param><![CDATA[eventType The Event type
+
+		 ]]></param>
+<param><![CDATA[commandClass The Class to unmap
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>flash.events.Event</code>.
+
+		 ]]></param>
+</method>
+<method name='unmapEvents' fullname='org.robotlegs.starling.core:ICommandMap/org.robotlegs.starling.core:ICommandMap:unmapEvents' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 Removes all mappings made through <code>mapEvent</code>
+
+		 ]]></description>
+</method>
+<interfaceRec name='IEventMap' fullname='org.robotlegs.starling.core:IEventMap' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\core\IEventMap.as' namespace='org.robotlegs.starling.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 The Robotlegs EventMap contract
+
+	 ]]></description>
+</interfaceRec>
+<method name='mapListener' fullname='org.robotlegs.starling.core:IEventMap/org.robotlegs.starling.core:IEventMap:mapListener' isStatic='false' isFinal='false' isOverride='false'  param_names='dispatcher;type;listener;eventClass' param_types='starling.events:EventDispatcher;String;Function;Class' param_defaults='undefined;undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 The same as calling <code>addEventListener</code> directly on the <code>EventDispatcher</code>,
+
+		 but keeps a list of listeners for easy (usually automatic) removal.
+
+		 
+		 ]]></description>
+<param><![CDATA[dispatcher The <code>IEventDispatcher</code> to listen to
+
+		 ]]></param>
+<param><![CDATA[type The <code>Event</code> type to listen for
+
+		 ]]></param>
+<param><![CDATA[listener The <code>Event</code> handler
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>starling.events.Event</code>.
+
+		 ]]></param>
+</method>
+<method name='unmapListener' fullname='org.robotlegs.starling.core:IEventMap/org.robotlegs.starling.core:IEventMap:unmapListener' isStatic='false' isFinal='false' isOverride='false'  param_names='dispatcher;type;listener;eventClass' param_types='starling.events:EventDispatcher;String;Function;Class' param_defaults='undefined;undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 The same as calling <code>removeEventListener</code> directly on the <code>EventDispatcher</code>,
+
+		 but updates our local list of listeners.
+
+		 
+		 ]]></description>
+<param><![CDATA[dispatcher The <code>EventDispatcher</code>
+
+		 ]]></param>
+<param><![CDATA[type The <code>Event</code> type
+
+		 ]]></param>
+<param><![CDATA[listener The <code>Event</code> handler
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>starling.events.Event</code>.
+
+		 ]]></param>
+</method>
+<method name='unmapListeners' fullname='org.robotlegs.starling.core:IEventMap/org.robotlegs.starling.core:IEventMap:unmapListeners' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 Removes all listeners registered through <code>mapListener</code>
+
+		 ]]></description>
+</method>
+<interfaceRec name='IContext' fullname='org.robotlegs.starling.core:IContext' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\core\IContext.as' namespace='org.robotlegs.starling.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 The Robotlegs Context contract
+
+	 ]]></description>
+</interfaceRec>
+<method name='eventDispatcher' fullname='org.robotlegs.starling.core:IContext/org.robotlegs.starling.core:IContext:eventDispatcher/get' isStatic='false' isFinal='false' isOverride='false'  result_type='starling.events:EventDispatcher'>
+<description><![CDATA[
+
+		 The <code>IContext</code>'s <code>EventDispatcher</code>
+
+		 ]]></description>
+</method>
+<interfaceRec name='IMediatorMap' fullname='org.robotlegs.starling.core:IMediatorMap' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\core\IMediatorMap.as' namespace='org.robotlegs.starling.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 The Robotlegs MediatorMap contract
+
+	 ]]></description>
+</interfaceRec>
+<method name='createMediator' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:createMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 Create an instance of a mapped <code>IMediator</code>
+
+		 
+		 <p>This will instantiate and register a Mediator for a given View Component.
+
+		 Mediator dependencies will be automatically resolved.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent An instance of the view Class previously mapped to an <code>IMediator</code> Class
+
+		 ]]></param>
+<return><![CDATA[The <code>IMediator</code>
+
+		 ]]></return>
+</method>
+<method name='hasMapping' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:hasMapping' isStatic='false' isFinal='false' isOverride='false'  param_names='viewClassOrName' param_types='*' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 Check if the view Class has been mapped or not
+
+		 
+
+		 ]]></description>
+<param><![CDATA[viewClassOrName The concrete view Class or Fully Qualified Class Name
+
+		 
+
+		 ]]></param>
+<return><![CDATA[Whether this view class has been mapped
+
+		 ]]></return>
+</method>
+<method name='hasMediatorForView' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:hasMediatorForView' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 Check if an <code>IMediator</code> has been registered for a view instance
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent The view that the <code>IMediator</code> was registered with
+
+		 ]]></param>
+<return><![CDATA[Whether an <code>IMediator</code> has been registered for this view instance
+
+		 ]]></return>
+</method>
+<method name='hasMediator' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:hasMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='mediator' param_types='org.robotlegs.starling.core:IMediator' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 Check if the <code>IMediator</code> has been registered
+
+		 
+		 ]]></description>
+<param><![CDATA[mediator The <code>IMediator</code> instance
+
+		 ]]></param>
+<return><![CDATA[Whether this <code>IMediator</code> has been registered
+
+		 ]]></return>
+</method>
+<method name='mapView' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:mapView' isStatic='false' isFinal='false' isOverride='false'  param_names='viewClassOrName;mediatorClass;injectViewAs;autoCreate;autoRemove' param_types='*;Class;*;Boolean;Boolean' param_defaults='undefined;undefined;null;true;true' result_type='void'>
+<description><![CDATA[
+
+		 Map an <code>IMediator</code> to a view Class
+
+		 
+		 ]]></description>
+<param><![CDATA[viewClassOrName The concrete view Class or Fully Qualified Class Name
+
+		 ]]></param>
+<param><![CDATA[mediatorClass The <code>IMediator</code> Class
+
+		 ]]></param>
+<param><![CDATA[injectViewAs The explicit view Interface or Class that the mediator depends on OR an Array of such Interfaces/Classes.
+
+		 ]]></param>
+<param><![CDATA[autoCreate Automatically construct and register an instance of Class <code>mediatorClass</code> when an instance of Class <code>viewClass</code> is detected
+
+		 ]]></param>
+<param><![CDATA[autoRemove Automatically remove an instance of Class <code>mediatorClass</code> when its <code>viewClass</code> leaves the ancestory of the context view
+
+		 ]]></param>
+</method>
+<method name='registerMediator' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:registerMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent;mediator' param_types='Object;org.robotlegs.starling.core:IMediator' param_defaults='undefined;undefined' result_type='void'>
+<description><![CDATA[
+
+		 Manually register an <code>IMediator</code> instance
+
+		 
+		 <p>NOTE: Registering a Mediator will NOT inject its dependencies.
+
+		 It is assumed that dependencies are already satisfied.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent The view component for the <code>IMediator</code>
+
+		 ]]></param>
+<param><![CDATA[mediator The <code>IMediator</code> to register
+
+		 ]]></param>
+</method>
+<method name='removeMediatorByView' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:removeMediatorByView' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 Remove a registered <code>IMediator</code> instance
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent The view that the <code>IMediator</code> was registered with
+
+		 ]]></param>
+<return><![CDATA[The <code>IMediator</code> that was removed
+
+		 ]]></return>
+</method>
+<method name='removeMediator' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:removeMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='mediator' param_types='org.robotlegs.starling.core:IMediator' param_defaults='undefined' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 Remove a registered <code>IMediator</code> instance
+
+		 
+		 ]]></description>
+<param><![CDATA[mediator The <code>IMediator</code> to remove
+
+		 ]]></param>
+<return><![CDATA[The <code>IMediator</code> that was removed
+
+		 ]]></return>
+</method>
+<method name='retrieveMediator' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:retrieveMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 Retrieve a registered <code>IMediator</code> instance
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent The view that the <code>IMediator</code> was registered with
+
+		 ]]></param>
+<return><![CDATA[The <code>IMediator</code>
+
+		 ]]></return>
+</method>
+<method name='unmapView' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:unmapView' isStatic='false' isFinal='false' isOverride='false'  param_names='viewClassOrName' param_types='*' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Unmap a view Class
+
+		  
+
+		 ]]></description>
+<param><![CDATA[viewClassOrName The concrete view Class or Fully Qualified Class Name
+
+		 ]]></param>
+</method>
+<method name='contextView' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:contextView/get' isStatic='false' isFinal='false' isOverride='false'  result_type='starling.display:DisplayObjectContainer'>
+<description><![CDATA[
+
+		 The <code>IMediatorMap</code>'s <code>DisplayObjectContainer</code>
+
+		 
+		 ]]></description>
+<return><![CDATA[view The <code>DisplayObjectContainer</code> to use as scope for this <code>IMediatorMap</code>
+
+		 ]]></return>
+</method>
+<method name='enabled' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:enabled/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+
+		 The <code>IMediatorMap</code>'s enabled status
+
+		 
+
+		 ]]></description>
+<return><![CDATA[Whether the <code>IMediatorMap</code> is enabled
+
+		 ]]></return>
+</method>
+<method name='contextView' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:contextView/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='starling.display:DisplayObjectContainer' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 The <code>IMediatorMap</code>'s <code>DisplayObjectContainer</code>
+
+		 
+		 ]]></description>
+<param><![CDATA[value The <code>DisplayObjectContainer</code> to use as scope for this <code>IMediatorMap</code>
+
+		 ]]></param>
+</method>
+<method name='enabled' fullname='org.robotlegs.starling.core:IMediatorMap/org.robotlegs.starling.core:IMediatorMap:enabled/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 The <code>IMediatorMap</code>'s enabled status
+
+		 
+
+		 ]]></description>
+<param><![CDATA[value Whether the <code>IMediatorMap</code> should be enabled
+
+		 ]]></param>
+</method>
+<interfaceRec name='IViewMap' fullname='org.robotlegs.starling.core:IViewMap' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\core\IViewMap.as' namespace='org.robotlegs.starling.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 The Robotlegs ViewMap contract. All IViewMap automatic injections occur AFTER the view components are added to the stage.
+
+	 ]]></description>
+</interfaceRec>
+<method name='hasPackage' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:hasPackage' isStatic='false' isFinal='false' isOverride='false'  param_names='packageName' param_types='String' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 Check if a package has been registered for automatic injection
+
+		 
+		 ]]></description>
+<param><![CDATA[packageName The substring to compare
+
+		 ]]></param>
+<return><![CDATA[Whether a package has been registered for automatic injection
+
+		 ]]></return>
+</method>
+<method name='hasType' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:hasType' isStatic='false' isFinal='false' isOverride='false'  param_names='type' param_types='Class' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 Check if a class or interface has been registered for automatic injection
+
+		 
+		 ]]></description>
+<param><![CDATA[type The concrete view interface 
+
+		 ]]></param>
+<return><![CDATA[Whether an interface has been registered for automatic injection
+
+		 ]]></return>
+</method>
+<method name='mapPackage' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:mapPackage' isStatic='false' isFinal='false' isOverride='false'  param_names='packageName' param_types='String' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Map an entire package (including sub-packages) for automatic injection
+
+		 
+
+		 ]]></description>
+<param><![CDATA[packageName The substring to compare
+
+		 ]]></param>
+</method>
+<method name='mapType' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:mapType' isStatic='false' isFinal='false' isOverride='false'  param_names='type' param_types='Class' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Map a view component class or interface for automatic injection
+
+		 
+		 ]]></description>
+<param><![CDATA[type The concrete view Interface
+
+		 ]]></param>
+</method>
+<method name='unmapPackage' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:unmapPackage' isStatic='false' isFinal='false' isOverride='false'  param_names='packageName' param_types='String' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Unmap a package
+
+		 
+
+		 ]]></description>
+<param><![CDATA[packageName The substring to compare
+
+		 ]]></param>
+</method>
+<method name='unmapType' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:unmapType' isStatic='false' isFinal='false' isOverride='false'  param_names='type' param_types='Class' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Unmap a view component class or interface
+
+		 
+		 ]]></description>
+<param><![CDATA[type The concrete view Interface
+
+		 ]]></param>
+</method>
+<method name='contextView' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:contextView/get' isStatic='false' isFinal='false' isOverride='false'  result_type='starling.display:DisplayObjectContainer'>
+<description><![CDATA[
+
+		 The <code>IViewMap</code>'s <code>DisplayObjectContainer</code>
+
+		 
+		 ]]></description>
+<return><![CDATA[view The <code>DisplayObjectContainer</code> to use as scope for this <code>IViewMap</code>
+
+		 ]]></return>
+</method>
+<method name='enabled' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:enabled/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+
+		 The <code>IViewMap</code>'s enabled status
+
+		 
+		 ]]></description>
+<return><![CDATA[Whether the <code>IViewMap</code> is enabled
+
+		 ]]></return>
+</method>
+<method name='contextView' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:contextView/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='starling.display:DisplayObjectContainer' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 The <code>IViewMap</code>'s <code>DisplayObjectContainer</code>
+
+		 
+		 ]]></description>
+<param><![CDATA[value The <code>DisplayObjectContainer</code> to use as scope for this <code>IViewMap</code>
+
+		 ]]></param>
+</method>
+<method name='enabled' fullname='org.robotlegs.starling.core:IViewMap/org.robotlegs.starling.core:IViewMap:enabled/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 The <code>IViewMap</code>'s enabled status
+
+		 
+		 ]]></description>
+<param><![CDATA[value Whether the <code>IViewMap</code> should be enabled
+
+		 ]]></param>
+</method>
+<interfaceRec name='IReflector' fullname='org.robotlegs.starling.core:IReflector' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\core\IReflector.as' namespace='org.robotlegs.starling.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 The Robotlegs Reflector contract
+
+	 ]]></description>
+</interfaceRec>
+<method name='classExtendsOrImplements' fullname='org.robotlegs.starling.core:IReflector/org.robotlegs.starling.core:IReflector:classExtendsOrImplements' isStatic='false' isFinal='false' isOverride='false'  param_names='classOrClassName;superclass;applicationDomain' param_types='Object;Class;flash.system:ApplicationDomain' param_defaults='undefined;undefined;null' result_type='Boolean'>
+<description><![CDATA[
+
+		 Does this class or class name implement this superclass or interface?
+
+		 
+
+		 ]]></description>
+<param><![CDATA[classOrClassName
+
+		 ]]></param>
+<param><![CDATA[superclass
+
+		 ]]></param>
+<param><![CDATA[applicationDomain
+
+		 ]]></param>
+<return><![CDATA[Boolean
+
+		 ]]></return>
+</method>
+<method name='getClass' fullname='org.robotlegs.starling.core:IReflector/org.robotlegs.starling.core:IReflector:getClass' isStatic='false' isFinal='false' isOverride='false'  param_names='value;applicationDomain' param_types='*;flash.system:ApplicationDomain' param_defaults='undefined;null' result_type='Class'>
+<description><![CDATA[
+
+		 Get the class of this instance
+
+		 
+
+		 ]]></description>
+<param><![CDATA[value The instance
+
+		 ]]></param>
+<param><![CDATA[applicationDomain
+
+		 ]]></param>
+<return><![CDATA[Class
+
+		 ]]></return>
+</method>
+<method name='getFQCN' fullname='org.robotlegs.starling.core:IReflector/org.robotlegs.starling.core:IReflector:getFQCN' isStatic='false' isFinal='false' isOverride='false'  param_names='value;replaceColons' param_types='*;Boolean' param_defaults='undefined;false' result_type='String'>
+<description><![CDATA[
+
+		 Get the Fully Qualified Class Name of this instance, class name, or class
+
+		 
+
+		 ]]></description>
+<param><![CDATA[value The instance, class name, or class
+
+		 ]]></param>
+<param><![CDATA[replaceColons
+
+		 ]]></param>
+<return><![CDATA[The Fully Qualified Class Name
+
+		 ]]></return>
+</method>
+<interfaceRec name='IInjector' fullname='org.robotlegs.starling.core:IInjector' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\core\IInjector.as' namespace='org.robotlegs.starling.core' access='public' baseClasses='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 The Robotlegs Injector contract
+
+	 ]]></description>
+</interfaceRec>
+<method name='createChild' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:createChild' isStatic='false' isFinal='false' isOverride='false'  param_names='applicationDomain' param_types='flash.system:ApplicationDomain' param_defaults='null' result_type='org.robotlegs.starling.core:IInjector'>
+<description><![CDATA[
+
+		 Create an injector that inherits rules from its parent
+
+		 
+
+		 ]]></description>
+<return><![CDATA[The injector 
+
+		 ]]></return>
+</method>
+<method name='getInstance' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:getInstance' isStatic='false' isFinal='false' isOverride='false'  param_names='clazz;named' param_types='Class;String' param_defaults='undefined;' result_type='*'>
+<description><![CDATA[
+
+		 Create or retrieve an instance of the given class
+
+		 
+
+		 ]]></description>
+<param><![CDATA[clazz
+
+		 ]]></param>
+<param><![CDATA[named An optional name (id)
+
+		 ]]></param>
+<return><![CDATA[An instance
+
+		 ]]></return>
+</method>
+<method name='hasMapping' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:hasMapping' isStatic='false' isFinal='false' isOverride='false'  param_names='clazz;named' param_types='Class;String' param_defaults='undefined;' result_type='Boolean'>
+<description><![CDATA[
+
+		 Does a rule exist to satsify such a request?
+
+		 
+
+		 ]]></description>
+<param><![CDATA[clazz A class or interface
+
+		 ]]></param>
+<param><![CDATA[named An optional name (id)
+
+		 ]]></param>
+<return><![CDATA[Whether such a mapping exists
+
+		 ]]></return>
+</method>
+<method name='injectInto' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:injectInto' isStatic='false' isFinal='false' isOverride='false'  param_names='target' param_types='Object' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Perform an injection into an object, satisfying all it's dependencies
+
+		 
+		 <p>The <code>IInjector</code> should throw an <code>Error</code>
+
+		 if it can't satisfy all dependencies of the injectee.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[target The object to inject into - the Injectee
+
+		 ]]></param>
+</method>
+<method name='instantiate' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:instantiate' isStatic='false' isFinal='false' isOverride='false'  param_names='clazz' param_types='Class' param_defaults='undefined' result_type='*'>
+<description><![CDATA[
+
+		 Create an object of the given class, supplying its dependencies as constructor parameters
+
+		 if the used DI solution has support for constructor injection
+
+		 
+		 <p>Adapters for DI solutions that don't support constructor injection should just create a new
+
+		 instance and perform setter and/ or method injection on that.</p>
+
+		 
+
+		 <p>NOTE: This method will always create a new instance. If you need to retrieve an instance
+
+		 consider using <code>getInstance</code></p>
+
+		 
+		 <p>The <code>IInjector</code> should throw an <code>Error</code>
+
+		 if it can't satisfy all dependencies of the injectee.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[clazz The class to instantiate
+
+		 ]]></param>
+<return><![CDATA[The created instance
+
+		 ]]></return>
+</method>
+<method name='mapClass' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:mapClass' isStatic='false' isFinal='false' isOverride='false'  param_names='whenAskedFor;instantiateClass;named' param_types='Class;Class;String' param_defaults='undefined;undefined;' result_type='*'>
+<description><![CDATA[
+
+		 When asked for an instance of the class <code>whenAskedFor</code>
+
+		 inject a new instance of <code>instantiateClass</code>.
+
+		 
+		 <p>This will create a new instance for each injection.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[whenAskedFor A class or interface
+
+		 ]]></param>
+<param><![CDATA[instantiateClass A class to instantiate
+
+		 ]]></param>
+<param><![CDATA[named An optional name (id)
+
+		 
+
+		 ]]></param>
+<return><![CDATA[A reference to the rule for this injection. To be used with <code>mapRule</code>
+
+		 ]]></return>
+</method>
+<method name='mapRule' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:mapRule' isStatic='false' isFinal='false' isOverride='false'  param_names='whenAskedFor;useRule;named' param_types='Class;*;String' param_defaults='undefined;undefined;' result_type='*'>
+<description><![CDATA[
+
+		 When asked for an instance of the class <code>whenAskedFor</code>
+
+		 use rule <code>useRule</code> to determine the correct injection.
+
+		 
+		 <p>This will use whatever injection is set by the given injection rule as created using 
+
+		 one of the other mapping methods.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[whenAskedFor A class or interface
+
+		 ]]></param>
+<param><![CDATA[useRule The rule to use for the injection
+
+		 ]]></param>
+<param><![CDATA[named An optional name (id)
+
+		 
+
+		 ]]></param>
+<return><![CDATA[A reference to the rule for this injection. To be used with <code>mapRule</code>
+
+		 ]]></return>
+</method>
+<method name='mapSingletonOf' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:mapSingletonOf' isStatic='false' isFinal='false' isOverride='false'  param_names='whenAskedFor;useSingletonOf;named' param_types='Class;Class;String' param_defaults='undefined;undefined;' result_type='*'>
+<description><![CDATA[
+
+		 When asked for an instance of the class <code>whenAskedFor</code>
+
+		 inject an instance of <code>useSingletonOf</code>.
+
+		 
+		 <p>This will create an instance on the first injection, but
+
+		 will re-use that instance for subsequent injections.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[whenAskedFor A class or interface
+
+		 ]]></param>
+<param><![CDATA[useSingletonOf A class to instantiate
+
+		 ]]></param>
+<param><![CDATA[named An optional name (id)
+
+		 
+
+		 ]]></param>
+<return><![CDATA[A reference to the rule for this injection. To be used with <code>mapRule</code>
+
+		 ]]></return>
+</method>
+<method name='mapSingleton' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:mapSingleton' isStatic='false' isFinal='false' isOverride='false'  param_names='whenAskedFor;named' param_types='Class;String' param_defaults='undefined;' result_type='*'>
+<description><![CDATA[
+
+		 When asked for an instance of the class <code>whenAskedFor</code>
+
+		 inject an instance of <code>whenAskedFor</code>.
+
+		 
+		 <p>This will create an instance on the first injection, but
+
+		 will re-use that instance for subsequent injections.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[whenAskedFor A class or interface
+
+		 ]]></param>
+<param><![CDATA[named An optional name (id)
+
+		 
+
+		 ]]></param>
+<return><![CDATA[A reference to the rule for this injection. To be used with <code>mapRule</code>
+
+		 ]]></return>
+</method>
+<method name='mapValue' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:mapValue' isStatic='false' isFinal='false' isOverride='false'  param_names='whenAskedFor;useValue;named' param_types='Class;Object;String' param_defaults='undefined;undefined;' result_type='*'>
+<description><![CDATA[
+
+		 When asked for an instance of the class <code>whenAskedFor</code>
+
+		 inject the instance <code>useValue</code>.
+
+		 
+		 <p>This is used to register an existing instance with the injector
+
+		 and treat it like a Singleton.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[whenAskedFor A class or interface
+
+		 ]]></param>
+<param><![CDATA[useValue An instance
+
+		 ]]></param>
+<param><![CDATA[named An optional name (id)
+
+		 
+
+		 ]]></param>
+<return><![CDATA[A reference to the rule for this injection. To be used with <code>mapRule</code>
+
+		 ]]></return>
+</method>
+<method name='unmap' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:unmap' isStatic='false' isFinal='false' isOverride='false'  param_names='clazz;named' param_types='Class;String' param_defaults='undefined;' result_type='void'>
+<description><![CDATA[
+
+		 Remove a rule from the injector
+
+		 
+		 ]]></description>
+<param><![CDATA[clazz A class or interface
+
+		 ]]></param>
+<param><![CDATA[named An optional name (id)
+
+		 ]]></param>
+</method>
+<method name='applicationDomain' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:applicationDomain/get' isStatic='false' isFinal='false' isOverride='false'  result_type='flash.system:ApplicationDomain'>
+<description><![CDATA[
+
+		 ]]></description>
+<return><![CDATA[The Application Domain
+
+		 ]]></return>
+</method>
+<method name='applicationDomain' fullname='org.robotlegs.starling.core:IInjector/org.robotlegs.starling.core:IInjector:applicationDomain/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='flash.system:ApplicationDomain' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<param><![CDATA[value The Application Domain
+
+		 ]]></param>
+</method>
+<classRec name='ContextEventType' fullname='org.robotlegs.starling.base:ContextEventType' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\ContextEventType.as' namespace='org.robotlegs.starling.base' access='public' baseclass='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 Framework event types
+
+	 ]]></description>
+</classRec>
+<field name='SHUTDOWN_COMPLETE' fullname='org.robotlegs.starling.base:ContextEventType/SHUTDOWN_COMPLETE' type='String' isStatic='true' isConst='true' defaultValue='shutdownComplete' >
+</field>
+<field name='SHUTDOWN' fullname='org.robotlegs.starling.base:ContextEventType/SHUTDOWN' type='String' isStatic='true' isConst='true' defaultValue='shutdown' >
+</field>
+<field name='STARTUP_COMPLETE' fullname='org.robotlegs.starling.base:ContextEventType/STARTUP_COMPLETE' type='String' isStatic='true' isConst='true' defaultValue='startupComplete' >
+</field>
+<field name='STARTUP' fullname='org.robotlegs.starling.base:ContextEventType/STARTUP' type='String' isStatic='true' isConst='true' defaultValue='startup' >
+</field>
+<classRec name='ContextError' fullname='org.robotlegs.starling.base:ContextError' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\ContextError.as' namespace='org.robotlegs.starling.base' access='public' baseclass='Error' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 A framework Error implementation
+
+	 ]]></description>
+</classRec>
+<method name='ContextError' fullname='org.robotlegs.starling.base:ContextError/ContextError' isStatic='false' isFinal='false' isOverride='false'  param_names='message;id' param_types='String;int' param_defaults=';0' result_type='*'>
+</method>
+<field name='E_COMMANDMAP_NOIMPL' fullname='org.robotlegs.starling.base:ContextError/E_COMMANDMAP_NOIMPL' type='String' isStatic='true' isConst='true' defaultValue='Command Class does not implement an execute() method' >
+</field>
+<field name='E_COMMANDMAP_OVR' fullname='org.robotlegs.starling.base:ContextError/E_COMMANDMAP_OVR' type='String' isStatic='true' isConst='true' defaultValue='Cannot overwrite map' >
+</field>
+<field name='E_CONTEXT_INJECTOR' fullname='org.robotlegs.starling.base:ContextError/E_CONTEXT_INJECTOR' type='String' isStatic='true' isConst='true' defaultValue='The ContextBase does not specify a concrete IInjector. Please override the injector getter in your concrete or abstract Context.' >
+</field>
+<field name='E_CONTEXT_REFLECTOR' fullname='org.robotlegs.starling.base:ContextError/E_CONTEXT_REFLECTOR' type='String' isStatic='true' isConst='true' defaultValue='The ContextBase does not specify a concrete IReflector. Please override the reflector getter in your concrete or abstract Context.' >
+</field>
+<field name='E_CONTEXT_VIEW_OVR' fullname='org.robotlegs.starling.base:ContextError/E_CONTEXT_VIEW_OVR' type='String' isStatic='true' isConst='true' defaultValue='Context contextView must only be set once' >
+</field>
+<field name='E_EVENTMAP_NOSNOOPING' fullname='org.robotlegs.starling.base:ContextError/E_EVENTMAP_NOSNOOPING' type='String' isStatic='true' isConst='true' defaultValue='Listening to the context eventDispatcher is not enabled for this EventMap' >
+</field>
+<field name='E_MEDIATORMAP_NOIMPL' fullname='org.robotlegs.starling.base:ContextError/E_MEDIATORMAP_NOIMPL' type='String' isStatic='true' isConst='true' defaultValue='Mediator Class does not implement IMediator' >
+</field>
+<field name='E_MEDIATORMAP_OVR' fullname='org.robotlegs.starling.base:ContextError/E_MEDIATORMAP_OVR' type='String' isStatic='true' isConst='true' defaultValue='Mediator Class has already been mapped to a View Class in this context' >
+</field>
+<classRec name='EventMap' fullname='org.robotlegs.starling.base:EventMap' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\EventMap.as' namespace='org.robotlegs.starling.base' access='public' baseclass='Object' interfaces='org.robotlegs.starling.core:IEventMap' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 An abstract <code>IEventMap</code> implementation
+
+	 ]]></description>
+</classRec>
+<method name='EventMap' fullname='org.robotlegs.starling.base:EventMap/EventMap' isStatic='false' isFinal='false' isOverride='false'  param_names='eventDispatcher' param_types='starling.events:EventDispatcher' param_defaults='undefined' result_type='*'>
+<description><![CDATA[
+
+		 Creates a new <code>EventMap</code> object
+
+		 
+		 ]]></description>
+<param><![CDATA[eventDispatcher An <code>IEventDispatcher</code> to treat as a bus
+
+		 ]]></param>
+</method>
+<method name='mapListener' fullname='org.robotlegs.starling.base:EventMap/mapListener' isStatic='false' isFinal='false' isOverride='false'  param_names='dispatcher;type;listener;eventClass' param_types='starling.events:EventDispatcher;String;Function;Class' param_defaults='undefined;undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 The same as calling <code>addEventListener</code> directly on the <code>EventDispatcher</code>,
+
+		 but keeps a list of listeners for easy (usually automatic) removal.
+
+		 
+		 ]]></description>
+<param><![CDATA[dispatcher The <code>IEventDispatcher</code> to listen to
+
+		 ]]></param>
+<param><![CDATA[type The <code>Event</code> type to listen for
+
+		 ]]></param>
+<param><![CDATA[listener The <code>Event</code> handler
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>starling.events.Event</code>.
+
+		 ]]></param>
+</method>
+<method name='routeEventToListener' fullname='org.robotlegs.starling.base:EventMap/protected:routeEventToListener' isStatic='false' isFinal='false' isOverride='false'  param_names='event;listener;originalEventClass' param_types='starling.events:Event;Function;Class' param_defaults='undefined;undefined;undefined' result_type='void'>
+<description><![CDATA[
+
+		 Event Handler
+
+		 
+		 ]]></description>
+<param><![CDATA[event The <code>Event</code>
+
+		 ]]></param>
+<param><![CDATA[listener
+
+		 ]]></param>
+<param><![CDATA[originalEventClass
+
+		 ]]></param>
+</method>
+<method name='unmapListener' fullname='org.robotlegs.starling.base:EventMap/unmapListener' isStatic='false' isFinal='false' isOverride='false'  param_names='dispatcher;type;listener;eventClass' param_types='starling.events:EventDispatcher;String;Function;Class' param_defaults='undefined;undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 The same as calling <code>removeEventListener</code> directly on the <code>EventDispatcher</code>,
+
+		 but updates our local list of listeners.
+
+		 
+		 ]]></description>
+<param><![CDATA[dispatcher The <code>IEventDispatcher</code>
+
+		 ]]></param>
+<param><![CDATA[type The <code>Event</code> type
+
+		 ]]></param>
+<param><![CDATA[listener The <code>Event</code> handler
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>starling.events.Event</code>.
+
+		 ]]></param>
+<param><![CDATA[useCapture
+
+		 ]]></param>
+</method>
+<method name='unmapListeners' fullname='org.robotlegs.starling.base:EventMap/unmapListeners' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 Removes all listeners registered through <code>mapListener</code>
+
+		 ]]></description>
+</method>
+<method name='dispatcherListeningEnabled' fullname='org.robotlegs.starling.base:EventMap/dispatcherListeningEnabled/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+
+		 ]]></description>
+<return><![CDATA[Is shared dispatcher listening allowed?
+
+		 ]]></return>
+</method>
+<method name='dispatcherListeningEnabled' fullname='org.robotlegs.starling.base:EventMap/dispatcherListeningEnabled/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<field name='_dispatcherListeningEnabled' fullname='org.robotlegs.starling.base:EventMap/protected:_dispatcherListeningEnabled' type='Boolean' isStatic='false' isConst='false' defaultValue='true' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='eventDispatcher' fullname='org.robotlegs.starling.base:EventMap/protected:eventDispatcher' type='starling.events:EventDispatcher' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 The <code>EventDispatcher</code>
+
+		 ]]></description>
+</field>
+<field name='listeners' fullname='org.robotlegs.starling.base:EventMap/protected:listeners' type='Array' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<classRec name='CommandMap' fullname='org.robotlegs.starling.base:CommandMap' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\CommandMap.as' namespace='org.robotlegs.starling.base' access='public' baseclass='Object' interfaces='org.robotlegs.starling.core:ICommandMap' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 An abstract <code>ICommandMap</code> implementation
+
+	 ]]></description>
+</classRec>
+<method name='CommandMap' fullname='org.robotlegs.starling.base:CommandMap/CommandMap' isStatic='false' isFinal='false' isOverride='false'  param_names='eventDispatcher;injector;reflector' param_types='starling.events:EventDispatcher;org.robotlegs.starling.core:IInjector;org.robotlegs.starling.core:IReflector' param_defaults='undefined;undefined;undefined' result_type='*'>
+<description><![CDATA[
+
+		 Creates a new <code>CommandMap</code> object
+
+		 
+		 ]]></description>
+<param><![CDATA[eventDispatcher The <code>EventDispatcher</code> to listen to
+
+		 ]]></param>
+<param><![CDATA[injector An <code>IInjector</code> to use for this context
+
+		 ]]></param>
+<param><![CDATA[reflector An <code>IReflector</code> to use for this context
+
+		 ]]></param>
+</method>
+<method name='detain' fullname='org.robotlegs.starling.base:CommandMap/detain' isStatic='false' isFinal='false' isOverride='false'  param_names='command' param_types='Object' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Detain a Command instance
+
+		 
+
+		 ]]></description>
+<param><![CDATA[command The Command instance to detain
+
+		 ]]></param>
+</method>
+<method name='execute' fullname='org.robotlegs.starling.base:CommandMap/execute' isStatic='false' isFinal='false' isOverride='false'  param_names='commandClass;payload;payloadClass;named' param_types='Class;Object;Class;String' param_defaults='undefined;null;null;' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Execute a Command with an optional payload
+
+		 
+
+		 <p>The <code>commandClass</code> must implement an execute() method</p>
+
+		 
+
+		 ]]></description>
+<param><![CDATA[commandClass The Class to instantiate - must have an execute() method
+
+		 ]]></param>
+<param><![CDATA[payload An optional payload
+
+		 ]]></param>
+<param><![CDATA[payloadClass  An optional class to inject the payload as
+
+		 ]]></param>
+<param><![CDATA[named An optional name for the payload injection
+
+		 
+
+		 ]]></param>
+</method>
+<method name='hasEventCommand' fullname='org.robotlegs.starling.base:CommandMap/hasEventCommand' isStatic='false' isFinal='false' isOverride='false'  param_names='eventType;commandClass;eventClass' param_types='String;Class;Class' param_defaults='undefined;undefined;null' result_type='Boolean'>
+<description><![CDATA[
+
+		 
+
+		 Check if a Class has been mapped to an Event type
+
+		 
+		 ]]></description>
+<param><![CDATA[eventType The Event type
+
+		 ]]></param>
+<param><![CDATA[commandClass The Class
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>flash.events.Event</code>.
+
+		 ]]></param>
+<return><![CDATA[Whether the Class is mapped to this Event type
+
+		 ]]></return>
+</method>
+<method name='mapEvent' fullname='org.robotlegs.starling.base:CommandMap/mapEvent' isStatic='false' isFinal='false' isOverride='false'  param_names='eventType;commandClass;eventClass;oneshot' param_types='String;Class;Class;Boolean' param_defaults='undefined;undefined;null;false' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Map a Class to an Event type
+
+		 
+
+		 <p>The <code>commandClass</code> must implement an execute() method</p>
+
+		 
+
+		 ]]></description>
+<param><![CDATA[eventType The Event type to listen for
+
+		 ]]></param>
+<param><![CDATA[commandClass The Class to instantiate - must have an execute() method
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>flash.events.Event</code>. Your commandClass can optionally [Inject] a variable of this type to access the event that triggered the command.
+
+		 ]]></param>
+<param><![CDATA[oneshot Unmap the Class after execution?
+
+		 
+
+		 ]]></param>
+</method>
+<method name='release' fullname='org.robotlegs.starling.base:CommandMap/release' isStatic='false' isFinal='false' isOverride='false'  param_names='command' param_types='Object' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Release a Command instance
+
+		 
+
+		 ]]></description>
+<param><![CDATA[command The Command instance to release for garbage collection
+
+		 ]]></param>
+</method>
+<method name='routeEventToCommand' fullname='org.robotlegs.starling.base:CommandMap/protected:routeEventToCommand' isStatic='false' isFinal='false' isOverride='false'  param_names='event;commandClass;oneshot;originalEventClass' param_types='starling.events:Event;Class;Boolean;Class' param_defaults='undefined;undefined;undefined;undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 Event Handler
+
+		 
+		 ]]></description>
+<param><![CDATA[event The <code>Event</code>
+
+		 ]]></param>
+<param><![CDATA[commandClass The Class to construct and execute
+
+		 ]]></param>
+<param><![CDATA[oneshot Should this command mapping be removed after execution?
+
+         ]]></param>
+<return><![CDATA[<code>true</code> if the event was routed to a Command and the Command was executed,
+
+                 <code>false</code> otherwise
+
+		 ]]></return>
+</method>
+<method name='unmapEvent' fullname='org.robotlegs.starling.base:CommandMap/unmapEvent' isStatic='false' isFinal='false' isOverride='false'  param_names='eventType;commandClass;eventClass' param_types='String;Class;Class' param_defaults='undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Unmap a Class to Event type mapping
+
+		 
+		 ]]></description>
+<param><![CDATA[eventType The Event type
+
+		 ]]></param>
+<param><![CDATA[commandClass The Class to unmap
+
+		 ]]></param>
+<param><![CDATA[eventClass Optional Event class for a stronger mapping. Defaults to <code>flash.events.Event</code>.
+
+		 ]]></param>
+</method>
+<method name='unmapEvents' fullname='org.robotlegs.starling.base:CommandMap/unmapEvents' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Removes all mappings made through <code>mapEvent</code>
+
+		 ]]></description>
+</method>
+<method name='verifyCommandClass' fullname='org.robotlegs.starling.base:CommandMap/protected:verifyCommandClass' isStatic='false' isFinal='false' isOverride='false'  param_names='commandClass' param_types='Class' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<throws><![CDATA[org.robotlegs.starling.base::ContextError
+
+		 ]]></throws>
+</method>
+<field name='detainedCommands' fullname='org.robotlegs.starling.base:CommandMap/protected:detainedCommands' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+</field>
+<field name='eventDispatcher' fullname='org.robotlegs.starling.base:CommandMap/protected:eventDispatcher' type='starling.events:EventDispatcher' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 The <code>EventDispatcher</code> to listen to
+
+		 ]]></description>
+</field>
+<field name='eventTypeMap' fullname='org.robotlegs.starling.base:CommandMap/protected:eventTypeMap' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 Internal
+
+		 
+		 TODO: This needs to be documented
+
+		 ]]></description>
+</field>
+<field name='injector' fullname='org.robotlegs.starling.base:CommandMap/protected:injector' type='org.robotlegs.starling.core:IInjector' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 The <code>IInjector</code> to inject with
+
+		 ]]></description>
+</field>
+<field name='reflector' fullname='org.robotlegs.starling.base:CommandMap/protected:reflector' type='org.robotlegs.starling.core:IReflector' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 The <code>IReflector</code> to reflect with
+
+		 ]]></description>
+</field>
+<field name='verifiedCommandClasses' fullname='org.robotlegs.starling.base:CommandMap/protected:verifiedCommandClasses' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 Internal
+
+		 
+		 Collection of command classes that have been verified to implement an <code>execute</code> method
+
+		 ]]></description>
+</field>
+<classRec name='MediatorBase' fullname='org.robotlegs.starling.base:MediatorBase' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\MediatorBase.as' namespace='org.robotlegs.starling.base' access='public' baseclass='Object' interfaces='org.robotlegs.starling.core:IMediator' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 An abstract <code>IMediator</code> implementation
+
+	 ]]></description>
+</classRec>
+<method name='MediatorBase' fullname='org.robotlegs.starling.base:MediatorBase/MediatorBase' isStatic='false' isFinal='false' isOverride='false'  result_type='*'>
+<description><![CDATA[
+
+		 Creates a new <code>Mediator</code> object
+
+		 ]]></description>
+</method>
+<method name='checkFeathers' fullname='org.robotlegs.starling.base:MediatorBase/protected:checkFeathers' isStatic='true' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+
+		 Feathers work-around part #3
+
+		 
+		 <p>Checks for availability of Feathers by trying to get the class for IFeathersControl.</p>
+
+		 ]]></description>
+</method>
+<method name='getViewComponent' fullname='org.robotlegs.starling.base:MediatorBase/getViewComponent' isStatic='false' isFinal='false' isOverride='false'  result_type='Object'>
+<description><![CDATA[
+
+		 
+
+		 The <code>IMediator</code>'s view component
+
+		 
+		 ]]></description>
+<return><![CDATA[The view component
+
+		 ]]></return>
+</method>
+<method name='onCreationComplete' fullname='org.robotlegs.starling.base:MediatorBase/protected:onCreationComplete' isStatic='false' isFinal='false' isOverride='false'  param_names='e' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Feathers work-around part #4
+
+		 
+		 <p><code>FeathersEventType.CREATION_COMPLETE</code> handler for this Mediator's View Component</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[e The event
+
+		 ]]></param>
+</method>
+<method name='onRegister' fullname='org.robotlegs.starling.base:MediatorBase/onRegister' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Should be invoked by the <code>IMediator</code> itself when it is ready to be interacted with
+
+		 
+		 <p>Override and place your initialization code here</p>
+
+		 ]]></description>
+</method>
+<method name='onRemove' fullname='org.robotlegs.starling.base:MediatorBase/onRemove' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Should be invoked by the <code>IMediator</code> itself when it is ready to for cleanup
+
+		 
+		 <p>Override and place your cleanup code here</p>
+
+		 ]]></description>
+</method>
+<method name='preRegister' fullname='org.robotlegs.starling.base:MediatorBase/preRegister' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Should be invoked by the <code>IMediatorMap</code> during <code>IMediator</code> registration
+
+		 ]]></description>
+</method>
+<method name='preRemove' fullname='org.robotlegs.starling.base:MediatorBase/preRemove' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Invoked when the <code>IMediator</code> has been removed by the <code>IMediatorMap</code>
+
+		 ]]></description>
+</method>
+<method name='setViewComponent' fullname='org.robotlegs.starling.base:MediatorBase/setViewComponent' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 The <code>IMediator</code>'s view component
+
+		 
+		 ]]></description>
+<param><![CDATA[The view component
+
+		 ]]></param>
+</method>
+<field name='FeathersControlType' fullname='org.robotlegs.starling.base:MediatorBase/protected:FeathersControlType' type='Class' isStatic='true' isConst='false' >
+<description><![CDATA[
+
+		 Feathers work-around part #1
+
+		 ]]></description>
+</field>
+<field name='feathersAvailable' fullname='org.robotlegs.starling.base:MediatorBase/protected:feathersAvailable' type='Boolean' isStatic='true' isConst='true' defaultValue='unknown' >
+<description><![CDATA[
+
+		 Feathers work-around part #2
+
+		 ]]></description>
+</field>
+<field name='removed' fullname='org.robotlegs.starling.base:MediatorBase/protected:removed' type='Boolean' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 Internal
+
+		 
+		 <p>In the case of deffered instantiation, onRemove might get called before
+
+		 onCreationComplete has fired. This here Bool helps us track that scenario.</p>
+
+		 ]]></description>
+</field>
+<field name='viewComponent' fullname='org.robotlegs.starling.base:MediatorBase/protected:viewComponent' type='Object' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 Internal
+
+		 
+		 <p>This Mediator's View Component - used by the RobotLegs MVCS framework internally.
+
+		 You should declare a dependency on a concrete view component in your
+
+		 implementation instead of working with this property</p>
+
+		 ]]></description>
+</field>
+<classRec name='ViewMapBase' fullname='org.robotlegs.starling.base:ViewMapBase' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\ViewMapBase.as' namespace='org.robotlegs.starling.base' access='public' baseclass='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 A base ViewMap implementation
+
+	 ]]></description>
+</classRec>
+<method name='ViewMapBase' fullname='org.robotlegs.starling.base:ViewMapBase/ViewMapBase' isStatic='false' isFinal='false' isOverride='false'  param_names='contextView;injector' param_types='starling.display:DisplayObjectContainer;org.robotlegs.starling.core:IInjector' param_defaults='undefined;undefined' result_type='*'>
+<description><![CDATA[
+
+		 Creates a new <code>ViewMap</code> object
+
+		 
+		 ]]></description>
+<param><![CDATA[contextView The root view node of the context. The map will listen for ADDED_TO_STAGE events on this node
+
+		 ]]></param>
+<param><![CDATA[injector An <code>IInjector</code> to use for this context
+
+		 ]]></param>
+</method>
+<method name='addListeners' fullname='org.robotlegs.starling.base:ViewMapBase/protected:addListeners' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='onViewAdded' fullname='org.robotlegs.starling.base:ViewMapBase/protected:onViewAdded' isStatic='false' isFinal='false' isOverride='false'  param_names='e' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='removeListeners' fullname='org.robotlegs.starling.base:ViewMapBase/protected:removeListeners' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='contextView' fullname='org.robotlegs.starling.base:ViewMapBase/contextView/get' isStatic='false' isFinal='false' isOverride='false'  result_type='starling.display:DisplayObjectContainer'>
+<description><![CDATA[
+
+		 ]]></description>
+<inheritDoc><![CDATA[]]></inheritDoc>
+</method>
+<method name='enabled' fullname='org.robotlegs.starling.base:ViewMapBase/enabled/get' isStatic='false' isFinal='false' isOverride='false'  result_type='Boolean'>
+<description><![CDATA[
+
+		 ]]></description>
+<inheritDoc><![CDATA[]]></inheritDoc>
+</method>
+<method name='contextView' fullname='org.robotlegs.starling.base:ViewMapBase/contextView/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='starling.display:DisplayObjectContainer' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<inheritDoc><![CDATA[]]></inheritDoc>
+</method>
+<method name='enabled' fullname='org.robotlegs.starling.base:ViewMapBase/enabled/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='Boolean' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<inheritDoc><![CDATA[]]></inheritDoc>
+</method>
+<field name='_contextView' fullname='org.robotlegs.starling.base:ViewMapBase/protected:_contextView' type='starling.display:DisplayObjectContainer' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_enabled' fullname='org.robotlegs.starling.base:ViewMapBase/protected:_enabled' type='Boolean' isStatic='false' isConst='false' defaultValue='true' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='injector' fullname='org.robotlegs.starling.base:ViewMapBase/protected:injector' type='org.robotlegs.starling.core:IInjector' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='useCapture' fullname='org.robotlegs.starling.base:ViewMapBase/protected:useCapture' type='Boolean' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='viewListenerCount' fullname='org.robotlegs.starling.base:ViewMapBase/protected:viewListenerCount' type='uint' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<classRec name='ContextBase' fullname='org.robotlegs.starling.base:ContextBase' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\ContextBase.as' namespace='org.robotlegs.starling.base' access='public' baseclass='starling.events:EventDispatcher' interfaces='org.robotlegs.starling.core:IContext' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 An abstract <code>IContext</code> implementation
+
+	 ]]></description>
+</classRec>
+<method name='ContextBase' fullname='org.robotlegs.starling.base:ContextBase/ContextBase' isStatic='false' isFinal='false' isOverride='false'  result_type='*'>
+<description><![CDATA[
+
+		 Abstract Context Implementation
+
+		 
+		 <p>Extend this class to create a Framework or Application context</p>
+
+		 ]]></description>
+</method>
+<method name='eventDispatcher' fullname='org.robotlegs.starling.base:ContextBase/eventDispatcher/get' isStatic='false' isFinal='false' isOverride='false'  result_type='starling.events:EventDispatcher'>
+<description><![CDATA[
+
+		 
+
+		 The <code>IContext</code>'s <code>EventDispatcher</code>
+
+		 ]]></description>
+</method>
+<classRec name='ViewMap' fullname='org.robotlegs.starling.base:ViewMap' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\ViewMap.as' namespace='org.robotlegs.starling.base' access='public' baseclass='org.robotlegs.starling.base:ViewMapBase' interfaces='org.robotlegs.starling.core:IViewMap' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 An abstract <code>IViewMap</code> implementation
+
+	 ]]></description>
+</classRec>
+<method name='ViewMap' fullname='org.robotlegs.starling.base:ViewMap/ViewMap' isStatic='false' isFinal='false' isOverride='false'  param_names='contextView;injector' param_types='starling.display:DisplayObjectContainer;org.robotlegs.starling.core:IInjector' param_defaults='undefined;undefined' result_type='*'>
+<description><![CDATA[
+
+		 Creates a new <code>ViewMap</code> object
+
+		 
+		 ]]></description>
+<param><![CDATA[contextView The root view node of the context. The map will listen for ADDED_TO_STAGE events on this node
+
+		 ]]></param>
+<param><![CDATA[injector An <code>IInjector</code> to use for this context
+
+		 ]]></param>
+</method>
+<method name='addListeners' fullname='org.robotlegs.starling.base:ViewMap/protected:addListeners' isStatic='false' isFinal='false' isOverride='true'  result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='hasPackage' fullname='org.robotlegs.starling.base:ViewMap/hasPackage' isStatic='false' isFinal='false' isOverride='false'  param_names='packageName' param_types='String' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 
+
+		 Check if a package has been registered for automatic injection
+
+		 
+		 ]]></description>
+<param><![CDATA[packageName The substring to compare
+
+		 ]]></param>
+<return><![CDATA[Whether a package has been registered for automatic injection
+
+		 ]]></return>
+</method>
+<method name='hasType' fullname='org.robotlegs.starling.base:ViewMap/hasType' isStatic='false' isFinal='false' isOverride='false'  param_names='type' param_types='Class' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 
+
+		 Check if a class or interface has been registered for automatic injection
+
+		 
+		 ]]></description>
+<param><![CDATA[type The concrete view interface 
+
+		 ]]></param>
+<return><![CDATA[Whether an interface has been registered for automatic injection
+
+		 ]]></return>
+</method>
+<method name='injectInto' fullname='org.robotlegs.starling.base:ViewMap/protected:injectInto' isStatic='false' isFinal='false' isOverride='false'  param_names='target' param_types='starling.display:DisplayObject' param_defaults='undefined' result_type='void'>
+</method>
+<method name='mapPackage' fullname='org.robotlegs.starling.base:ViewMap/mapPackage' isStatic='false' isFinal='false' isOverride='false'  param_names='packageName' param_types='String' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Map an entire package (including sub-packages) for automatic injection
+
+		 
+
+		 ]]></description>
+<param><![CDATA[packageName The substring to compare
+
+		 ]]></param>
+</method>
+<method name='mapType' fullname='org.robotlegs.starling.base:ViewMap/mapType' isStatic='false' isFinal='false' isOverride='false'  param_names='type' param_types='Class' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Map a view component class or interface for automatic injection
+
+		 
+		 ]]></description>
+<param><![CDATA[type The concrete view Interface
+
+		 ]]></param>
+</method>
+<method name='onViewAdded' fullname='org.robotlegs.starling.base:ViewMap/protected:onViewAdded' isStatic='false' isFinal='false' isOverride='true'  param_names='e' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='removeListeners' fullname='org.robotlegs.starling.base:ViewMap/protected:removeListeners' isStatic='false' isFinal='false' isOverride='true'  result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='unmapPackage' fullname='org.robotlegs.starling.base:ViewMap/unmapPackage' isStatic='false' isFinal='false' isOverride='false'  param_names='packageName' param_types='String' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Unmap a package
+
+		 
+
+		 ]]></description>
+<param><![CDATA[packageName The substring to compare
+
+		 ]]></param>
+</method>
+<method name='unmapType' fullname='org.robotlegs.starling.base:ViewMap/unmapType' isStatic='false' isFinal='false' isOverride='false'  param_names='type' param_types='Class' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Unmap a view component class or interface
+
+		 
+		 ]]></description>
+<param><![CDATA[type The concrete view Interface
+
+		 ]]></param>
+</method>
+<field name='injectedViews' fullname='org.robotlegs.starling.base:ViewMap/protected:injectedViews' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='mappedPackages' fullname='org.robotlegs.starling.base:ViewMap/protected:mappedPackages' type='Array' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='mappedTypes' fullname='org.robotlegs.starling.base:ViewMap/protected:mappedTypes' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<classRec name='MediatorMap' fullname='org.robotlegs.starling.base:MediatorMap' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\base\MediatorMap.as' namespace='org.robotlegs.starling.base' access='public' baseclass='org.robotlegs.starling.base:ViewMapBase' interfaces='org.robotlegs.starling.core:IMediatorMap' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 An abstract <code>IMediatorMap</code> implementation
+
+	 ]]></description>
+</classRec>
+<method name='MediatorMap' fullname='org.robotlegs.starling.base:MediatorMap/MediatorMap' isStatic='false' isFinal='false' isOverride='false'  param_names='contextView;injector;reflector' param_types='starling.display:DisplayObjectContainer;org.robotlegs.starling.core:IInjector;org.robotlegs.starling.core:IReflector' param_defaults='undefined;undefined;undefined' result_type='*'>
+<description><![CDATA[
+
+		 Creates a new <code>MediatorMap</code> object
+
+		 
+		 ]]></description>
+<param><![CDATA[contextView The root view node of the context. The map will listen for ADDED_TO_STAGE events on this node
+
+		 ]]></param>
+<param><![CDATA[injector An <code>IInjector</code> to use for this context
+
+		 ]]></param>
+<param><![CDATA[reflector An <code>IReflector</code> to use for this context
+
+		 ]]></param>
+</method>
+<method name='addListeners' fullname='org.robotlegs.starling.base:MediatorMap/protected:addListeners' isStatic='false' isFinal='false' isOverride='true'  result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='addView' fullname='org.robotlegs.starling.base:MediatorMap/protected:addView' isStatic='false' isFinal='false' isOverride='false'  param_names='view' param_types='starling.display:DisplayObject' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='createMediatorUsing' fullname='org.robotlegs.starling.base:MediatorMap/protected:createMediatorUsing' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent;viewClassName;config' param_types='Object;String;MediatorMap.as$25:MappingConfig' param_defaults='undefined;null;null' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='createMediator' fullname='org.robotlegs.starling.base:MediatorMap/createMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 
+
+		 Create an instance of a mapped <code>IMediator</code>
+
+		 
+		 <p>This will instantiate and register a Mediator for a given View Component.
+
+		 Mediator dependencies will be automatically resolved.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent An instance of the view Class previously mapped to an <code>IMediator</code> Class
+
+		 ]]></param>
+<return><![CDATA[The <code>IMediator</code>
+
+		 ]]></return>
+</method>
+<method name='hasMapping' fullname='org.robotlegs.starling.base:MediatorMap/hasMapping' isStatic='false' isFinal='false' isOverride='false'  param_names='viewClassOrName' param_types='*' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 
+
+		 Check if the view Class has been mapped or not
+
+		 
+
+		 ]]></description>
+<param><![CDATA[viewClassOrName The concrete view Class or Fully Qualified Class Name
+
+		 
+
+		 ]]></param>
+<return><![CDATA[Whether this view class has been mapped
+
+		 ]]></return>
+</method>
+<method name='hasMediatorForView' fullname='org.robotlegs.starling.base:MediatorMap/hasMediatorForView' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 
+
+		 Check if an <code>IMediator</code> has been registered for a view instance
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent The view that the <code>IMediator</code> was registered with
+
+		 ]]></param>
+<return><![CDATA[Whether an <code>IMediator</code> has been registered for this view instance
+
+		 ]]></return>
+</method>
+<method name='hasMediator' fullname='org.robotlegs.starling.base:MediatorMap/hasMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='mediator' param_types='org.robotlegs.starling.core:IMediator' param_defaults='undefined' result_type='Boolean'>
+<description><![CDATA[
+
+		 
+
+		 Check if the <code>IMediator</code> has been registered
+
+		 
+		 ]]></description>
+<param><![CDATA[mediator The <code>IMediator</code> instance
+
+		 ]]></param>
+<return><![CDATA[Whether this <code>IMediator</code> has been registered
+
+		 ]]></return>
+</method>
+<method name='mapView' fullname='org.robotlegs.starling.base:MediatorMap/mapView' isStatic='false' isFinal='false' isOverride='false'  param_names='viewClassOrName;mediatorClass;injectViewAs;autoCreate;autoRemove' param_types='*;Class;*;Boolean;Boolean' param_defaults='undefined;undefined;null;true;true' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Map an <code>IMediator</code> to a view Class
+
+		 
+		 ]]></description>
+<param><![CDATA[viewClassOrName The concrete view Class or Fully Qualified Class Name
+
+		 ]]></param>
+<param><![CDATA[mediatorClass The <code>IMediator</code> Class
+
+		 ]]></param>
+<param><![CDATA[injectViewAs The explicit view Interface or Class that the mediator depends on OR an Array of such Interfaces/Classes.
+
+		 ]]></param>
+<param><![CDATA[autoCreate Automatically construct and register an instance of Class <code>mediatorClass</code> when an instance of Class <code>viewClass</code> is detected
+
+		 ]]></param>
+<param><![CDATA[autoRemove Automatically remove an instance of Class <code>mediatorClass</code> when its <code>viewClass</code> leaves the ancestory of the context view
+
+		 ]]></param>
+</method>
+<method name='onViewAdded' fullname='org.robotlegs.starling.base:MediatorMap/protected:onViewAdded' isStatic='false' isFinal='false' isOverride='true'  param_names='e' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='onViewRemoved' fullname='org.robotlegs.starling.base:MediatorMap/protected:onViewRemoved' isStatic='false' isFinal='false' isOverride='false'  param_names='e' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Flex framework work-around part #5
+
+		 ]]></description>
+</method>
+<method name='registerMediator' fullname='org.robotlegs.starling.base:MediatorMap/registerMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent;mediator' param_types='Object;org.robotlegs.starling.core:IMediator' param_defaults='undefined;undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Manually register an <code>IMediator</code> instance
+
+		 
+		 <p>NOTE: Registering a Mediator will NOT inject its dependencies.
+
+		 It is assumed that dependencies are already satisfied.</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent The view component for the <code>IMediator</code>
+
+		 ]]></param>
+<param><![CDATA[mediator The <code>IMediator</code> to register
+
+		 ]]></param>
+</method>
+<method name='removeListeners' fullname='org.robotlegs.starling.base:MediatorMap/protected:removeListeners' isStatic='false' isFinal='false' isOverride='true'  result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='removeMediatorByView' fullname='org.robotlegs.starling.base:MediatorMap/removeMediatorByView' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 
+
+		 Remove a registered <code>IMediator</code> instance
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent The view that the <code>IMediator</code> was registered with
+
+		 ]]></param>
+<return><![CDATA[The <code>IMediator</code> that was removed
+
+		 ]]></return>
+</method>
+<method name='removeMediatorLater' fullname='org.robotlegs.starling.base:MediatorMap/protected:removeMediatorLater' isStatic='false' isFinal='false' isOverride='false'  param_names='event' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Flex framework work-around part #6
+
+		 ]]></description>
+</method>
+<method name='removeMediator' fullname='org.robotlegs.starling.base:MediatorMap/removeMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='mediator' param_types='org.robotlegs.starling.core:IMediator' param_defaults='undefined' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 
+
+		 Remove a registered <code>IMediator</code> instance
+
+		 
+		 ]]></description>
+<param><![CDATA[mediator The <code>IMediator</code> to remove
+
+		 ]]></param>
+<return><![CDATA[The <code>IMediator</code> that was removed
+
+		 ]]></return>
+</method>
+<method name='removeView' fullname='org.robotlegs.starling.base:MediatorMap/protected:removeView' isStatic='false' isFinal='false' isOverride='false'  param_names='view' param_types='starling.display:DisplayObject' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='retrieveMediator' fullname='org.robotlegs.starling.base:MediatorMap/retrieveMediator' isStatic='false' isFinal='false' isOverride='false'  param_names='viewComponent' param_types='Object' param_defaults='undefined' result_type='org.robotlegs.starling.core:IMediator'>
+<description><![CDATA[
+
+		 
+
+		 Retrieve a registered <code>IMediator</code> instance
+
+		 
+		 ]]></description>
+<param><![CDATA[viewComponent The view that the <code>IMediator</code> was registered with
+
+		 ]]></param>
+<return><![CDATA[The <code>IMediator</code>
+
+		 ]]></return>
+</method>
+<method name='unmapView' fullname='org.robotlegs.starling.base:MediatorMap/unmapView' isStatic='false' isFinal='false' isOverride='false'  param_names='viewClassOrName' param_types='*' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 Unmap a view Class
+
+		  
+
+		 ]]></description>
+<param><![CDATA[viewClassOrName The concrete view Class or Fully Qualified Class Name
+
+		 ]]></param>
+</method>
+<field name='hasMediatorsMarkedForRemoval' fullname='org.robotlegs.starling.base:MediatorMap/protected:hasMediatorsMarkedForRemoval' type='Boolean' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='mappingConfigByViewClassName' fullname='org.robotlegs.starling.base:MediatorMap/protected:mappingConfigByViewClassName' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='mappingConfigByView' fullname='org.robotlegs.starling.base:MediatorMap/protected:mappingConfigByView' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='mediatorByView' fullname='org.robotlegs.starling.base:MediatorMap/protected:mediatorByView' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='mediatorsMarkedForRemoval' fullname='org.robotlegs.starling.base:MediatorMap/protected:mediatorsMarkedForRemoval' type='flash.utils:Dictionary' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='reflector' fullname='org.robotlegs.starling.base:MediatorMap/protected:reflector' type='org.robotlegs.starling.core:IReflector' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<classRec name='Actor' fullname='org.robotlegs.starling.mvcs:Actor' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\mvcs\Actor.as' namespace='org.robotlegs.starling.mvcs' access='public' baseclass='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 Abstract MVCS <code>IActor</code> implementation
+
+	 
+	 <p>As part of the MVCS implementation the <code>Actor</code> provides core functionality to an applications
+
+	 various working parts.</p>
+
+	 
+	 <p>Some possible uses for the <code>Actor</code> include, but are no means limited to:</p>
+
+	 
+	 <ul>
+
+	 <li>Service classes</li>
+
+	 <li>Model classes</li>
+
+	 <li>Controller classes</li>
+
+	 <li>Presentation model classes</li>
+
+	 </ul>
+
+	 
+	 <p>Essentially any class where it might be advantageous to have basic dependency injection supplied is a candidate
+
+	 for extending <code>Actor</code>.</p>
+
+	 
+	 ]]></description>
+</classRec>
+<method name='Actor' fullname='org.robotlegs.starling.mvcs:Actor/Actor' isStatic='false' isFinal='false' isOverride='false'  result_type='*'>
+</method>
+<method name='dispatchWith' fullname='org.robotlegs.starling.mvcs:Actor/protected:dispatchWith' isStatic='false' isFinal='false' isOverride='false'  param_names='type;bubbles;data' param_types='String;Boolean;Object' param_defaults='undefined;false;null' result_type='void'>
+<description><![CDATA[
+
+		 Dispatch helper method with pooling
+
+		 
+		 ]]></description>
+<param><![CDATA[type The <code>Event</code> type to dispatch on the <code>IContext</code>'s <code>EventDispatcher</code>
+
+		 ]]></param>
+<param><![CDATA[bubbles Whether the event bubbles
+
+		 ]]></param>
+<param><![CDATA[data The payload to include with the event
+
+		 ]]></param>
+</method>
+<method name='dispatch' fullname='org.robotlegs.starling.mvcs:Actor/protected:dispatch' isStatic='false' isFinal='false' isOverride='false'  param_names='event' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Dispatch helper method
+
+		 
+		 ]]></description>
+<param><![CDATA[event The <code>Event</code> to dispatch on the <code>IContext</code>'s <code>EventDispatcher</code>
+
+		 ]]></param>
+</method>
+<method name='eventDispatcher' fullname='org.robotlegs.starling.mvcs:Actor/eventDispatcher/get' isStatic='false' isFinal='false' isOverride='false'  result_type='starling.events:EventDispatcher'>
+<description><![CDATA[
+
+		 ]]></description>
+<inheritDoc><![CDATA[]]></inheritDoc>
+</method>
+<method name='eventMap' fullname='org.robotlegs.starling.mvcs:Actor/protected:eventMap/get' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:IEventMap'>
+<description><![CDATA[
+
+		 Local EventMap
+
+		 
+		 ]]></description>
+<return><![CDATA[The EventMap for this Actor
+
+		 ]]></return>
+</method>
+<method name='eventDispatcher' fullname='org.robotlegs.starling.mvcs:Actor/eventDispatcher/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='starling.events:EventDispatcher' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<field name='_eventDispatcher' fullname='org.robotlegs.starling.mvcs:Actor/protected:_eventDispatcher' type='starling.events:EventDispatcher' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_eventMap' fullname='org.robotlegs.starling.mvcs:Actor/protected:_eventMap' type='org.robotlegs.starling.core:IEventMap' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<classRec name='Command' fullname='org.robotlegs.starling.mvcs:Command' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\mvcs\Command.as' namespace='org.robotlegs.starling.mvcs' access='public' baseclass='Object' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 Abstract MVCS command implementation
+
+	 ]]></description>
+</classRec>
+<method name='Command' fullname='org.robotlegs.starling.mvcs:Command/Command' isStatic='false' isFinal='false' isOverride='false'  result_type='*'>
+</method>
+<method name='dispatchWith' fullname='org.robotlegs.starling.mvcs:Command/protected:dispatchWith' isStatic='false' isFinal='false' isOverride='false'  param_names='type;bubbles;data' param_types='String;Boolean;Object' param_defaults='undefined;false;null' result_type='void'>
+<description><![CDATA[
+
+		 Dispatch helper method with pooling
+
+		 
+		 ]]></description>
+<param><![CDATA[type The <code>Event</code> type to dispatch on the <code>IContext</code>'s <code>EventDispatcher</code>
+
+		 ]]></param>
+<param><![CDATA[bubbles Whether the event bubbles
+
+		 ]]></param>
+<param><![CDATA[data The payload to include with the event
+
+		 ]]></param>
+</method>
+<method name='dispatch' fullname='org.robotlegs.starling.mvcs:Command/protected:dispatch' isStatic='false' isFinal='false' isOverride='false'  param_names='event' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Dispatch helper method
+
+		 
+		 ]]></description>
+<param><![CDATA[event The <code>Event</code> to dispatch on the <code>IContext</code>'s <code>EventDispatcher</code>
+
+		 ]]></param>
+</method>
+<method name='execute' fullname='org.robotlegs.starling.mvcs:Command/execute' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<inheritDoc><![CDATA[]]></inheritDoc>
+</method>
+<field name='commandMap' fullname='org.robotlegs.starling.mvcs:Command/commandMap' type='org.robotlegs.starling.core:ICommandMap' isStatic='false' isConst='false' >
+</field>
+<field name='contextView' fullname='org.robotlegs.starling.mvcs:Command/contextView' type='starling.display:DisplayObjectContainer' isStatic='false' isConst='false' >
+</field>
+<field name='eventDispatcher' fullname='org.robotlegs.starling.mvcs:Command/eventDispatcher' type='starling.events:EventDispatcher' isStatic='false' isConst='false' >
+</field>
+<field name='injector' fullname='org.robotlegs.starling.mvcs:Command/injector' type='org.robotlegs.starling.core:IInjector' isStatic='false' isConst='false' >
+</field>
+<field name='mediatorMap' fullname='org.robotlegs.starling.mvcs:Command/mediatorMap' type='org.robotlegs.starling.core:IMediatorMap' isStatic='false' isConst='false' >
+</field>
+<classRec name='Mediator' fullname='org.robotlegs.starling.mvcs:Mediator' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\mvcs\Mediator.as' namespace='org.robotlegs.starling.mvcs' access='public' baseclass='org.robotlegs.starling.base:MediatorBase' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 Abstract MVCS <code>IMediator</code> implementation
+
+	 ]]></description>
+</classRec>
+<method name='Mediator' fullname='org.robotlegs.starling.mvcs:Mediator/Mediator' isStatic='false' isFinal='false' isOverride='false'  result_type='*'>
+</method>
+<method name='addContextListener' fullname='org.robotlegs.starling.mvcs:Mediator/protected:addContextListener' isStatic='false' isFinal='false' isOverride='false'  param_names='type;listener;eventClass' param_types='String;Function;Class' param_defaults='undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 Syntactical sugar for mapping a listener to an <code>EventDispatcher</code>
+
+		 
+
+		 ]]></description>
+<param><![CDATA[dispatcher
+
+		 ]]></param>
+<param><![CDATA[type
+
+		 ]]></param>
+<param><![CDATA[listener
+
+		 ]]></param>
+<param><![CDATA[eventClass
+
+		 
+
+		 ]]></param>
+</method>
+<method name='addViewListener' fullname='org.robotlegs.starling.mvcs:Mediator/protected:addViewListener' isStatic='false' isFinal='false' isOverride='false'  param_names='type;listener;eventClass' param_types='String;Function;Class' param_defaults='undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 Syntactical sugar for mapping a listener to the <code>viewComponent</code> 
+
+		 
+
+		 ]]></description>
+<param><![CDATA[type
+
+		 ]]></param>
+<param><![CDATA[listener
+
+		 ]]></param>
+<param><![CDATA[eventClass
+
+		 
+
+		 ]]></param>
+</method>
+<method name='dispatchWith' fullname='org.robotlegs.starling.mvcs:Mediator/protected:dispatchWith' isStatic='false' isFinal='false' isOverride='false'  param_names='type;bubbles;data' param_types='String;Boolean;Object' param_defaults='undefined;false;null' result_type='void'>
+<description><![CDATA[
+
+		 Dispatch helper method with pooling
+
+		 
+		 ]]></description>
+<param><![CDATA[type The <code>Event</code> type to dispatch on the <code>IContext</code>'s <code>EventDispatcher</code>
+
+		 ]]></param>
+<param><![CDATA[bubbles Whether the event bubbles
+
+		 ]]></param>
+<param><![CDATA[data The payload to include with the event
+
+		 ]]></param>
+</method>
+<method name='dispatch' fullname='org.robotlegs.starling.mvcs:Mediator/protected:dispatch' isStatic='false' isFinal='false' isOverride='false'  param_names='event' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 Dispatch helper method
+
+		 
+		 ]]></description>
+<param><![CDATA[event The Event to dispatch on the <code>IContext</code>'s <code>EventDispatcher</code>
+
+		 ]]></param>
+</method>
+<method name='preRemove' fullname='org.robotlegs.starling.mvcs:Mediator/preRemove' isStatic='false' isFinal='false' isOverride='true'  result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 
+
+		 Invoked when the <code>IMediator</code> has been removed by the <code>IMediatorMap</code>
+
+		 ]]></description>
+</method>
+<method name='removeContextListener' fullname='org.robotlegs.starling.mvcs:Mediator/protected:removeContextListener' isStatic='false' isFinal='false' isOverride='false'  param_names='type;listener;eventClass' param_types='String;Function;Class' param_defaults='undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 Syntactical sugar for unmapping a listener from an <code>IEventDispatcher</code>
+
+		 
+		 ]]></description>
+<param><![CDATA[dispatcher
+
+		 ]]></param>
+<param><![CDATA[type
+
+		 ]]></param>
+<param><![CDATA[listener
+
+		 ]]></param>
+<param><![CDATA[eventClass
+
+		 
+		 ]]></param>
+</method>
+<method name='removeViewListener' fullname='org.robotlegs.starling.mvcs:Mediator/protected:removeViewListener' isStatic='false' isFinal='false' isOverride='false'  param_names='type;listener;eventClass' param_types='String;Function;Class' param_defaults='undefined;undefined;null' result_type='void'>
+<description><![CDATA[
+
+		 Syntactical sugar for mapping a listener from the <code>viewComponent</code>
+
+		 
+		 ]]></description>
+<param><![CDATA[type
+
+		 ]]></param>
+<param><![CDATA[listener
+
+		 ]]></param>
+<param><![CDATA[eventClass
+
+		 
+		 ]]></param>
+</method>
+<method name='eventDispatcher' fullname='org.robotlegs.starling.mvcs:Mediator/eventDispatcher/get' isStatic='false' isFinal='false' isOverride='false'  result_type='starling.events:EventDispatcher'>
+<description><![CDATA[
+
+		 ]]></description>
+<inheritDoc><![CDATA[]]></inheritDoc>
+</method>
+<method name='eventMap' fullname='org.robotlegs.starling.mvcs:Mediator/protected:eventMap/get' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:IEventMap'>
+<description><![CDATA[
+
+		 Local EventMap
+
+		 
+		 ]]></description>
+<return><![CDATA[The EventMap for this Actor
+
+		 ]]></return>
+</method>
+<method name='eventDispatcher' fullname='org.robotlegs.starling.mvcs:Mediator/eventDispatcher/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='starling.events:EventDispatcher' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<field name='_eventDispatcher' fullname='org.robotlegs.starling.mvcs:Mediator/protected:_eventDispatcher' type='starling.events:EventDispatcher' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_eventMap' fullname='org.robotlegs.starling.mvcs:Mediator/protected:_eventMap' type='org.robotlegs.starling.core:IEventMap' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='contextView' fullname='org.robotlegs.starling.mvcs:Mediator/contextView' type='starling.display:DisplayObjectContainer' isStatic='false' isConst='false' >
+</field>
+<field name='mediatorMap' fullname='org.robotlegs.starling.mvcs:Mediator/mediatorMap' type='org.robotlegs.starling.core:IMediatorMap' isStatic='false' isConst='false' >
+</field>
+<classRec name='Context' fullname='org.robotlegs.starling.mvcs:Context' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\starling\mvcs\Context.as' namespace='org.robotlegs.starling.mvcs' access='public' baseclass='org.robotlegs.starling.base:ContextBase' interfaces='org.robotlegs.starling.core:IContext' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 Abstract MVCS <code>IContext</code> implementation
+
+	 ]]></description>
+<metadata>
+	<Event owner='org.robotlegs.starling.mvcs:Context' name='startupComplete' type='starling.events.Event' >
+<description><![CDATA[
+
+	 Dispatched by the <code>startup()</code> method when it finishes
+
+	 executing.
+
+	 
+
+	 <p>One common pattern for application startup/bootstrapping makes use
+
+	 of the <code>startupComplete</code> event. In this pattern, you do the
+
+	 following:</p>
+
+	 <ul>
+
+	   <li>Override the <code>startup()</code> method in your Context 
+
+	       subclass and set up application mappings in your 
+
+	       <code>startup()</code> override as you always do in Robotlegs.</li>
+
+	   <li>Create commands that perform startup/bootstrapping operations
+
+	       such as loading the initial data, checking for application updates,
+
+	       etc.</li>
+
+	   <li><p>Map those commands to the <code>ContextEvent.STARTUP_COMPLETE</code>
+
+	       event:</p>
+
+	       <listing>commandMap.mapEvent(ContextEvent.STARTUP_COMPLETE, LoadInitialDataCommand, ContextEvent, true):</listing>
+
+	       </li>
+
+	   <li>Dispatch the <code>startupComplete</code> (<code>ContextEvent.STARTUP_COMPLETE</code>)
+
+	       event from your <code>startup()</code> override. You can do this
+
+	       in one of two ways: dispatch the event yourself, or call 
+
+	       <code>super.startup()</code>. (The Context class's 
+
+	       <code>startup()</code> method dispatches the 
+
+	       <code>startupComplete</code> event.)</li>
+
+	 </ul>
+
+	 
+
+	 ]]></description>
+<eventType><![CDATA[org.robotlegs.starling.base.ContextEventType.STARTUP_COMPLETE
+
+	 
+
+	 ]]></eventType>
+<see><![CDATA[#startup()
+
+	 ]]></see>
+	</Event>
+</metadata>
+</classRec>
+<method name='Context' fullname='org.robotlegs.starling.mvcs:Context/Context' isStatic='false' isFinal='false' isOverride='false'  param_names='contextView;autoStartup' param_types='starling.display:DisplayObjectContainer;Boolean' param_defaults='null;true' result_type='*'>
+<description><![CDATA[
+
+		 Abstract Context Implementation
+
+		 
+		 <p>Extend this class to create a Framework or Application context</p>
+
+		 
+		 ]]></description>
+<param><![CDATA[contextView The root view node of the context. The context will listen for ADDED_TO_STAGE events on this node
+
+		 ]]></param>
+<param><![CDATA[autoStartup Should this context automatically invoke it's <code>startup</code> method when it's <code>contextView</code> arrives on Stage?
+
+		 ]]></param>
+</method>
+<method name='checkAutoStartup' fullname='org.robotlegs.starling.mvcs:Context/protected:checkAutoStartup' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='createChildInjector' fullname='org.robotlegs.starling.mvcs:Context/protected:createChildInjector' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:IInjector'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='createInjector' fullname='org.robotlegs.starling.mvcs:Context/protected:createInjector' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:IInjector'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='getApplicationDomainFromContextView' fullname='org.robotlegs.starling.mvcs:Context/protected:getApplicationDomainFromContextView' isStatic='false' isFinal='false' isOverride='false'  result_type='flash.system:ApplicationDomain'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='mapInjections' fullname='org.robotlegs.starling.mvcs:Context/protected:mapInjections' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 Injection Mapping Hook
+
+		 
+		 <p>Override this in your Framework context to change the default configuration</p>
+
+		 
+		 <p>Beware of collisions in your container</p>
+
+		 ]]></description>
+</method>
+<method name='onAddedToStage' fullname='org.robotlegs.starling.mvcs:Context/protected:onAddedToStage' isStatic='false' isFinal='false' isOverride='false'  param_names='e' param_types='starling.events:Event' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='shutdown' fullname='org.robotlegs.starling.mvcs:Context/shutdown' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 The Startup Hook
+
+		 
+		 <p>Override this in your Application context</p>
+
+		 ]]></description>
+</method>
+<method name='startup' fullname='org.robotlegs.starling.mvcs:Context/startup' isStatic='false' isFinal='false' isOverride='false'  result_type='void'>
+<description><![CDATA[
+
+		 The Startup Hook
+
+		 
+		 <p>Override this in your Application context</p>
+
+		 
+
+		 ]]></description>
+<event><![CDATA[startupComplete ContextEvent.STARTUP_COMPLETE Dispatched at the end of the
+
+		                        <code>startup()</code> method's execution. This
+
+		                        is often used to trigger startup/bootstrapping
+
+		                        commands by wiring them to this event and 
+
+		                        calling <code>super.startup()</code> in the 
+
+		                        last line of your <code>startup()</code>
+
+		                        override.
+
+		 ]]></event>
+</method>
+<method name='commandMap' fullname='org.robotlegs.starling.mvcs:Context/protected:commandMap/get' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:ICommandMap'>
+<description><![CDATA[
+
+		 The <code>ICommandMap</code> for this <code>IContext</code>
+
+		 ]]></description>
+</method>
+<method name='contextView' fullname='org.robotlegs.starling.mvcs:Context/contextView/get' isStatic='false' isFinal='false' isOverride='false'  result_type='starling.display:DisplayObjectContainer'>
+<description><![CDATA[
+
+		 The <code>DisplayObjectContainer</code> that scopes this <code>IContext</code>
+
+		 ]]></description>
+</method>
+<method name='injector' fullname='org.robotlegs.starling.mvcs:Context/protected:injector/get' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:IInjector'>
+<description><![CDATA[
+
+		 The <code>IInjector</code> for this <code>IContext</code>
+
+		 ]]></description>
+</method>
+<method name='mediatorMap' fullname='org.robotlegs.starling.mvcs:Context/protected:mediatorMap/get' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:IMediatorMap'>
+<description><![CDATA[
+
+		 The <code>IMediatorMap</code> for this <code>IContext</code>
+
+		 ]]></description>
+</method>
+<method name='reflector' fullname='org.robotlegs.starling.mvcs:Context/protected:reflector/get' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:IReflector'>
+<description><![CDATA[
+
+		 The <code>IReflector</code> for this <code>IContext</code>
+
+		 ]]></description>
+</method>
+<method name='viewMap' fullname='org.robotlegs.starling.mvcs:Context/protected:viewMap/get' isStatic='false' isFinal='false' isOverride='false'  result_type='org.robotlegs.starling.core:IViewMap'>
+<description><![CDATA[
+
+		 The <code>IViewMap</code> for this <code>IContext</code>
+
+		 ]]></description>
+</method>
+<method name='commandMap' fullname='org.robotlegs.starling.mvcs:Context/protected:commandMap/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='org.robotlegs.starling.core:ICommandMap' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='contextView' fullname='org.robotlegs.starling.mvcs:Context/contextView/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='starling.display:DisplayObjectContainer' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='injector' fullname='org.robotlegs.starling.mvcs:Context/protected:injector/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='org.robotlegs.starling.core:IInjector' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='mediatorMap' fullname='org.robotlegs.starling.mvcs:Context/protected:mediatorMap/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='org.robotlegs.starling.core:IMediatorMap' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='reflector' fullname='org.robotlegs.starling.mvcs:Context/protected:reflector/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='org.robotlegs.starling.core:IReflector' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<method name='viewMap' fullname='org.robotlegs.starling.mvcs:Context/protected:viewMap/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='org.robotlegs.starling.core:IViewMap' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</method>
+<field name='_autoStartup' fullname='org.robotlegs.starling.mvcs:Context/protected:_autoStartup' type='Boolean' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_commandMap' fullname='org.robotlegs.starling.mvcs:Context/protected:_commandMap' type='org.robotlegs.starling.core:ICommandMap' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_contextView' fullname='org.robotlegs.starling.mvcs:Context/protected:_contextView' type='starling.display:DisplayObjectContainer' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_injector' fullname='org.robotlegs.starling.mvcs:Context/protected:_injector' type='org.robotlegs.starling.core:IInjector' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_mediatorMap' fullname='org.robotlegs.starling.mvcs:Context/protected:_mediatorMap' type='org.robotlegs.starling.core:IMediatorMap' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_reflector' fullname='org.robotlegs.starling.mvcs:Context/protected:_reflector' type='org.robotlegs.starling.core:IReflector' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<field name='_viewMap' fullname='org.robotlegs.starling.mvcs:Context/protected:_viewMap' type='org.robotlegs.starling.core:IViewMap' isStatic='false' isConst='false' >
+<description><![CDATA[
+
+		 ]]></description>
+<private><![CDATA[]]></private>
+</field>
+<classRec name='SwiftSuspendersInjector' fullname='org.robotlegs.adapters:SwiftSuspendersInjector' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\adapters\SwiftSuspendersInjector.as' namespace='org.robotlegs.adapters' access='public' baseclass='org.swiftsuspenders:Injector' interfaces='org.robotlegs.starling.core:IInjector' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 SwiftSuspender <code>IInjector</code> adpater - See: <a href="http://github.com/tschneidereit/SwiftSuspenders">SwiftSuspenders</a>
+
+	 
+	 ]]></description>
+<author><![CDATA[tschneidereit
+
+	 ]]></author>
+</classRec>
+<method name='SwiftSuspendersInjector' fullname='org.robotlegs.adapters:SwiftSuspendersInjector/SwiftSuspendersInjector' isStatic='false' isFinal='false' isOverride='false'  param_names='xmlConfig' param_types='XML' param_defaults='null' result_type='*'>
+</method>
+<method name='createChild' fullname='org.robotlegs.adapters:SwiftSuspendersInjector/createChild' isStatic='false' isFinal='false' isOverride='false'  param_names='applicationDomain' param_types='flash.system:ApplicationDomain' param_defaults='null' result_type='org.robotlegs.starling.core:IInjector'>
+<description><![CDATA[
+
+		 
+
+		 Create an injector that inherits rules from its parent
+
+		 
+
+		 ]]></description>
+<return><![CDATA[The injector 
+
+		 ]]></return>
+</method>
+<method name='applicationDomain' fullname='org.robotlegs.adapters:SwiftSuspendersInjector/applicationDomain/get' isStatic='false' isFinal='false' isOverride='false'  result_type='flash.system:ApplicationDomain'>
+<description><![CDATA[
+
+		 
+
+		 ]]></description>
+<return><![CDATA[The Application Domain
+
+		 ]]></return>
+</method>
+<method name='applicationDomain' fullname='org.robotlegs.adapters:SwiftSuspendersInjector/applicationDomain/set' isStatic='false' isFinal='false' isOverride='false'  param_names='value' param_types='flash.system:ApplicationDomain' param_defaults='undefined' result_type='void'>
+<description><![CDATA[
+
+		 
+
+		 ]]></description>
+<param><![CDATA[value The Application Domain
+
+		 ]]></param>
+</method>
+<field name='XML_CONFIG' fullname='org.robotlegs.adapters:SwiftSuspendersInjector/protected:XML_CONFIG' type='XML' isStatic='true' isConst='true' defaultValue='unknown' >
+</field>
+<classRec name='SwiftSuspendersReflector' fullname='org.robotlegs.adapters:SwiftSuspendersReflector' sourcefile='C:\Users\Josh Tynjala\Development\Flash\robotlegs-framework-starling\src\org\robotlegs\adapters\SwiftSuspendersReflector.as' namespace='org.robotlegs.adapters' access='public' baseclass='org.swiftsuspenders:Reflector' interfaces='org.robotlegs.starling.core:IReflector' isFinal='false' isDynamic='false' >
+<description><![CDATA[
+
+	 SwiftSuspender <code>IReflector</code> adpater - See: <a href="http://github.com/tschneidereit/SwiftSuspenders">SwiftSuspenders</a>
+
+	 
+
+	 ]]></description>
+<author><![CDATA[tschneidereit
+
+	 ]]></author>
+</classRec>
+</asdoc>

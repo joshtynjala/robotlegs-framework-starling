@@ -16,7 +16,9 @@ This is a complete port of [Robotlegs](http://www.robotlegs.org/) version 1.x ta
 
 ## Requirements
 
-Built with Starling Framework 1.5.1. Feathers 1.3.0 or newer is required to work with Feathers components. Feathers is completely optional when using Robotlegs for Starling.
+Built with Starling Framework 1.8. Feathers 2.2.0 or newer is required to work with Feathers components. Feathers is completely optional when using Robotlegs for Starling.
+
+Compatible with Starling Framework 2.
 
 ## Credits
 

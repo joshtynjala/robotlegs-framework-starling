@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allClasses>
+   <apiPackage id="org.robotlegs.adapters">
+      <apiName>org.robotlegs.adapters</apiName>
+      <apiClassifier id="org.robotlegs.adapters:SwiftSuspendersInjector">
+         <apiName>SwiftSuspendersInjector</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:IInjector</apiBaseInterface>
+               <apiBaseClassifier>org.swiftsuspenders:Injector</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.adapters:SwiftSuspendersReflector">
+         <apiName>SwiftSuspendersReflector</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:IReflector</apiBaseInterface>
+               <apiBaseClassifier>org.swiftsuspenders:Reflector</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="org.robotlegs.starling.base">
+      <apiName>org.robotlegs.starling.base</apiName>
+      <apiClassifier id="org.robotlegs.starling.base:MediatorMap">
+         <apiName>MediatorMap</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:IMediatorMap</apiBaseInterface>
+               <apiBaseClassifier>org.robotlegs.starling.base:ViewMapBase</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.base:ContextError">
+         <apiName>ContextError</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Error</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.base:ViewMapBase">
+         <apiName>ViewMapBase</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.base:ContextEventType">
+         <apiName>ContextEventType</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.base:MediatorBase">
+         <apiName>MediatorBase</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:IMediator</apiBaseInterface>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.base:ViewMap">
+         <apiName>ViewMap</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:IViewMap</apiBaseInterface>
+               <apiBaseClassifier>org.robotlegs.starling.base:ViewMapBase</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.base:EventMap">
+         <apiName>EventMap</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:IEventMap</apiBaseInterface>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.base:CommandMap">
+         <apiName>CommandMap</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:ICommandMap</apiBaseInterface>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.base:ContextBase">
+         <apiName>ContextBase</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:IContext</apiBaseInterface>
+               <apiBaseClassifier>starling.events:EventDispatcher</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="org.robotlegs.starling.core">
+      <apiName>org.robotlegs.starling.core</apiName>
+      <apiClassifier id="org.robotlegs.starling.core:IMediator">
+         <apiName>IMediator</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.core:IMediatorMap">
+         <apiName>IMediatorMap</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.core:IContext">
+         <apiName>IContext</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.core:IEventMap">
+         <apiName>IEventMap</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.core:IInjector">
+         <apiName>IInjector</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.core:ICommandMap">
+         <apiName>ICommandMap</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.core:IViewMap">
+         <apiName>IViewMap</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.core:IReflector">
+         <apiName>IReflector</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiInterface/>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier/>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+   </apiPackage>
+   <apiPackage id="org.robotlegs.starling.mvcs">
+      <apiName>org.robotlegs.starling.mvcs</apiName>
+      <apiClassifier id="org.robotlegs.starling.mvcs:Context">
+         <apiName>Context</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseInterface>org.robotlegs.starling.core:IContext</apiBaseInterface>
+               <apiBaseClassifier>org.robotlegs.starling.base:ContextBase</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.mvcs:Command">
+         <apiName>Command</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.mvcs:Actor">
+         <apiName>Actor</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>Object</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+      <apiClassifier id="org.robotlegs.starling.mvcs:Mediator">
+         <apiName>Mediator</apiName>
+         <apiClassifierDetail>
+            <apiClassifierDef>
+               <apiAccess value="public"/>
+               <apiStatic/>
+               <apiBaseClassifier>org.robotlegs.starling.base:MediatorBase</apiBaseClassifier>
+            </apiClassifierDef>
+         </apiClassifierDetail>
+         <prolog>
+            <asMetadata/>
+         </prolog>
+      </apiClassifier>
+   </apiPackage>
+</allClasses>

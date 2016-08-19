@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><apiPackage id="org.robotlegs.adapters"><apiName>org.robotlegs.adapters</apiName><apiDetail/><apiClassifier id="org.robotlegs.adapters:SwiftSuspendersInjector"><apiName>SwiftSuspendersInjector</apiName><shortdesc>
+	 SwiftSuspender IInjector adpater - See: SwiftSuspenders
+	 	 </shortdesc><prolog><author>tschneidereit
+	 </author><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>org.robotlegs.starling.core:IInjector</apiBaseInterface><apiBaseClassifier>org.swiftsuspenders:Injector</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 SwiftSuspender <codeph>IInjector</codeph> adpater - See: <xref href="http://github.com/tschneidereit/SwiftSuspenders">SwiftSuspenders</xref>
+	 	 </apiDesc></apiClassifierDetail><apiConstructor id="org.robotlegs.adapters:SwiftSuspendersInjector:SwiftSuspendersInjector"><apiName>SwiftSuspendersInjector</apiName><shortdesc/><prolog/><apiConstructorDetail><apiConstructorDef><apiAccess value="public"/><apiParam><apiItemName>xmlConfig</apiItemName><apiType value="XML"/><apiData>null</apiData></apiParam></apiConstructorDef></apiConstructorDetail></apiConstructor><apiOperation id="org.robotlegs.adapters:SwiftSuspendersInjector:createChild"><apiName>createChild</apiName><shortdesc>
+		 
+		 Create an injector that inherits rules from its parent
+		 
+		 </shortdesc><prolog/><apiOperationDetail><apiOperationDef><apiAccess value="public"/><apiReturn><apiDesc>The injector 
+		 </apiDesc><apiOperationClassifier>org.robotlegs.starling.core:IInjector</apiOperationClassifier></apiReturn><apiParam><apiItemName>applicationDomain</apiItemName><apiType value="flash.system:ApplicationDomain"/><apiData>null</apiData></apiParam></apiOperationDef><apiDesc>
+		 
+		 Create an injector that inherits rules from its parent
+		 
+		 </apiDesc></apiOperationDetail></apiOperation><apiValue id="org.robotlegs.adapters:SwiftSuspendersInjector:protected:XML_CONFIG"><apiName>XML_CONFIG</apiName><shortdesc/><prolog/><apiValueDetail><apiValueDef><apiAccess value="protected"/><apiStatic/><apiData>unknown</apiData><apiType value="XML"/></apiValueDef></apiValueDetail></apiValue><apiValue id="org.robotlegs.adapters:SwiftSuspendersInjector:applicationDomain:get"><apiName>applicationDomain</apiName><shortdesc>
+		 
+		 </shortdesc><prolog/><apiValueDetail><apiValueDef><apiProperty/><apiAccess value="public"/><apiDynamic/><apiValueAccess value="readwrite"/><apiType value="flash.system:ApplicationDomain"/></apiValueDef><apiDesc>
+		 
+		 </apiDesc></apiValueDetail></apiValue></apiClassifier><apiClassifier id="org.robotlegs.adapters:SwiftSuspendersReflector"><apiName>SwiftSuspendersReflector</apiName><shortdesc>
+	 SwiftSuspender IReflector adpater - See: SwiftSuspenders
+	 
+	 </shortdesc><prolog><author>tschneidereit
+	 </author><asMetadata/></prolog><apiClassifierDetail><apiClassifierDef><apiAccess value="public"/><apiStatic/><apiBaseInterface>org.robotlegs.starling.core:IReflector</apiBaseInterface><apiBaseClassifier>org.swiftsuspenders:Reflector</apiBaseClassifier></apiClassifierDef><apiDesc>
+	 SwiftSuspender <codeph>IReflector</codeph> adpater - See: <xref href="http://github.com/tschneidereit/SwiftSuspenders">SwiftSuspenders</xref>
+	 
+	 </apiDesc></apiClassifierDetail></apiClassifier></apiPackage>

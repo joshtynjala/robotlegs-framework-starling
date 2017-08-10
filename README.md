@@ -26,4 +26,7 @@ Based on the hard work of the original Robotlegs contributors. Ported to Starlin
 
 ## Examples
 
+The following open source applications are built with robotlegs-framework-starling:
+
 * [feathers-weather](https://github.com/joshtynjala/feathers-weather) is a mobile app built with Starling, Feathers, and Robotlegs that uses weather and location APIs from Yahoo.
+* The official [Feathers SDK Manager](https://github.com/BowlerHatLLC/feathers-sdk-manager) is an application that simplifies installation of the [Feathers SDK](https://feathersui.com/sdk/) by downloading all of its dependencies.
